@@ -6,9 +6,9 @@
 <head runat="server">
     <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="alternate" href="font-awesome.min.css" />
+    <link rel="alternate" href="admin_font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="style.default.css"/>
+    <link rel="stylesheet" href="admin_style.default.css"/>
     
 </head>
 
