@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="alternate" href="font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.default.css"/>
+    
+</head>
+
+<body>
+    <div class="page">
+        <!-- Main Navbar-->
+        <!-- header -->
+        <header class="header">
+            <nav class="navbar">
+                <!-- Search Box-->
+                <div class="search-box">
+                    <button class="dismiss"><i class="icon-close"></i></button>
+                    <form id="searchForm" action="#" role="search">
+                        
+                    </form>
+                </div>
+                <div class="container-fluid">
+                    <div class="navbar-holder d-flex align-items-center justify-content-between">
+                        <!-- Navbar Header-->
+                        <div class="navbar-header">
+                            <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                                <div class="brand-text d-none d-lg-inline-block"><span>Cửa hàng bán thực phẩm sạch </span></div>
+                                <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div>
+                            </a>
+                            <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                        </div>
+                        <!-- Navbar Menu -->
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                            <!-- Search-->
+                            <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
+                            <!-- Notifications-->
+                            <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
+                                <ul aria-labelledby="notifications" class="dropdown-menu">
+                                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                                        <div class="notification">
+                                            <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
+                                            <div class="notification-time"><small>4 minutes ago</small></div>
+                                        </div>
+                                    </a></li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                                        <div class="notification">
+                                            <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                            <div class="notification-time"><small>4 minutes ago</small></div>
+                                        </div>
+                                    </a></li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                                        <div class="notification">
+                                            <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                                            <div class="notification-time"><small>4 minutes ago</small></div>
+                                        </div>
+                                    </a></li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                                        <div class="notification">
+                                            <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                            <div class="notification-time"><small>10 minutes ago</small></div>
+                                        </div>
+                                    </a></li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications </strong></a></li>
+                                </ul>
+                            </li>
+                            <!-- Messages                        -->
+                            <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
+                                <ul aria-labelledby="notifications" class="dropdown-menu">
+                                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                        <div class="msg-profile"><!--link anh--> </div>
+                                        <div class="msg-body">
+                                            <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                                        </div>
+                                    </a></li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                        <div class="msg-profile"></div>
+                                        <div class="msg-body">
+                                            <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                                        </div>
+                                    </a></li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                        <div class="msg-profile"> </div>
+                                        <div class="msg-body">
+                                            <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                                        </div>
+                                    </a></li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages </strong></a></li>
+                                </ul>
+                            </li>
+                            <!-- Languages dropdown    -->
+                            <!-- Logout    -->
+                            <li class="nav-item"><a href="admin-login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- End header -->
+        <div class="page-content d-flex align-items-stretch">
+            <!-- Side Navbar -->
+            <nav class="side-navbar">
+                <!-- Sidebar Header-->
+                <div class="sidebar-header d-flex align-items-center">
+                    <div class="avatar"></div>
+                    <div class="title">
+                        <h1 class="h4">Manage</h1>
+                        <p>Bá Trung</p>
+                    </div>
+                </div>
+                <ul class="list-unstyled">
+                    <li class="active"><a href="'Trangchu.aspx') ?>"> <i class="icon-home"></i>Trang chủ </a></li>
+                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý loại thực phẩm</a>
+                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                            <li><a href="admin_Danhsachloaithucpham.aspx">Danh sách loại thực phẩm </a></li>
+                            <li><a href="admin_Themloaithucpham.aspx">Thêm loại thực phẩm </a></li>
+                            <li><a href="admin_Sualoaithucpham.aspx">Sửa loại thực phẩm </a></li>
+                            <li><a href="admin_Xoaloaithucpham.aspx">Xóa loại thực phẩm </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#exampledropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý thực phẩm</a>
+                        <ul id="exampledropdown" class="collapse list-unstyled ">
+                            <li><a href="admin_Danhsachthucpham.aspx">Danh sách thực phẩm </a></li>
+                            <li><a href="admin_Themthucpham.aspx">Thêm thực phẩm </a></li>
+                            <li><a href="admin_Suathucpham.aspx">Sửa thực phẩm </a></li>
+                            <li><a href="admin_Xoathucpham.aspx">Xóa thực phẩm </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#exampledropdow" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý đơn hàng</a>
+                        <ul id="exampledropdow" class="collapse list-unstyled ">
+                            <li><a href="admin_Thongtindonhang.aspx">Thông tin đơn hàng</a></li>
+                            <li><a href="admin_Suadonhang.aspx">Sửa đơn hàng</a></li>
+                        </ul>
+                    </li>
+                </ul><span class="heading">Extras</span>
+            </nav>
+            <!-- End Side Navbar -->
+            <div class="content-inner">
+                <!-- content -->
+                <!-- Page Header-->
+                
+                <!-- Dashboard Counts Section-->
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                
+                <!-- Dashboard Header Section    -->
+                
+                <!-- Page Footer-->
+                <!-- End content -->
+                <footer class="main-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Nguyễn Bá Trung - 3FGROUP &copy; 2019-2020</p>
+                            </div>
+                            <div class="col-sm-6 text-right">
+
+                                <p>Design by <a href="https://bootstrapious.com/p/admin-template" class="external">Bootstrapious</a>
+                                    <span class="fa fa-facebook"><a class="btn btn-block btn-social btn-facebook"></a></span>
+                                </p>
+                                <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery/jquery.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/chart.js/Chart.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/js/charts-home.js"></script>
+    <!-- Main File-->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
