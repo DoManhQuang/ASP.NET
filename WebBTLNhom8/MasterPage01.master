@@ -97,8 +97,8 @@
                                                         <div class="content">
                                                             <script type="text/javascript">var array_menu_close = [];</script>
                                                             <script type="text/javascript">array_menu_close[0] = "group_cat_224";</script>
-                                                            <div class="menu_header "><a href="#" style="color: red">SẢN PHẨM</a></div>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">THỊT SẠCH</a></div>
+                                                            <div class="menu_header "><a href="Danhsachsanpham.aspx" style="color: red">SẢN PHẨM</a></div>
+                                                            <%--<div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">THỊT SẠCH</a></div>
                                                             <div class="menu_cat_group" id="group_cat_224" style="display: none;">
                                                                 <div class="sub_menu_cat"><a href="http://youmart.vn/thit-lon_dm49.html&amp;group=brand">Thịt lợn</a> (31)</div>
                                                                 <div class="sub_menu_cat"><a href="http://youmart.vn/thit-bo-ta_dm66.html&amp;group=brand">Thịt bò ta</a> (13)</div>
@@ -163,7 +163,7 @@
                                                             <div class="menu_cat_group" id="group_cat_101" style="display: none;">
                                                                 <div class="sub_menu_cat"><a href="http://youmart.vn/dau_dm448.html&amp;group=brand">Đậu</a> (4)</div>
                                                                 <div class="sub_menu_cat"><a href="http://youmart.vn/trung_dm447.html&amp;group=brand">Trứng</a> (5)</div>
-                                                            </div>
+                                                            </div>--%>
                                                             <input type="hidden" id="menu_open" value="">
                                                             <script type="text/javascript">
                                                                 //close menu tap on page load

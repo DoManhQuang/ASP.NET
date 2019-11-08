@@ -110,31 +110,26 @@
                     <div class="avatar"></div>
                     <div class="title">
                         <h1 class="h4">Manage</h1>
-                        <p>Bá Trung</p>
+                        <p>Nhóm 8</p>
                     </div>
                 </div>
                 <ul class="list-unstyled">
-                    <li class="active"><a href="'Trangchu.aspx') ?>"> <i class="icon-home"></i>Trang chủ </a></li>
+                    <li class="active"><a href="admin_Trangchu.aspx"> <i class="icon-home"></i>Trang chủ </a></li>
                     <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý loại thực phẩm</a>
                         <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                             <li><a href="admin_Danhsachloaithucpham.aspx">Danh sách loại thực phẩm </a></li>
                             <li><a href="admin_Themloaithucpham.aspx">Thêm loại thực phẩm </a></li>
-                            <li><a href="admin_Sualoaithucpham.aspx">Sửa loại thực phẩm </a></li>
-                            <li><a href="admin_Xoaloaithucpham.aspx">Xóa loại thực phẩm </a></li>
                         </ul>
                     </li>
                     <li><a href="#exampledropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý thực phẩm</a>
                         <ul id="exampledropdown" class="collapse list-unstyled ">
                             <li><a href="admin_Danhsachthucpham.aspx">Danh sách thực phẩm </a></li>
                             <li><a href="admin_Themthucpham.aspx">Thêm thực phẩm </a></li>
-                            <li><a href="admin_Suathucpham.aspx">Sửa thực phẩm </a></li>
-                            <li><a href="admin_Xoathucpham.aspx">Xóa thực phẩm </a></li>
                         </ul>
                     </li>
                     <li><a href="#exampledropdow" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý đơn hàng</a>
                         <ul id="exampledropdow" class="collapse list-unstyled ">
                             <li><a href="admin_Thongtindonhang.aspx">Thông tin đơn hàng</a></li>
-                            <li><a href="admin_Suadonhang.aspx">Sửa đơn hàng</a></li>
                         </ul>
                     </li>
                 </ul><span class="heading">Extras</span>
@@ -156,7 +151,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                <p>Nguyễn Bá Trung - 3FGROUP &copy; 2019-2020</p>
+                                <p>Nhóm 8 - 3FGROUP &copy; 2019-2020</p>
                             </div>
                             <div class="col-sm-6 text-right">
 
