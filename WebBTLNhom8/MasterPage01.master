@@ -53,7 +53,8 @@
                                         <div>Yahoo: <a href="ymsgr:sendim?sieuthiyoumart&amp;m=Hoi+ve+san+pham">
                                             <img border="0" src="http://opi.yahoo.com/online?u=sieuthiyoumart&amp;m=g&amp;t=1&amp;l=us" align="absmiddle" alt=""></a></div>
                                     </div>
-                                    <div class="header_cart"><a href="Giohang.aspx" title="Giỏ hàng">Giỏ hàng</a> ( <b id="count_shopping_cart">0</b> sản phẩm )</div>
+                                    <div class="header_cart"><a href="Giohang.aspx" title="Giỏ hàng">Giỏ hàng</a> (<asp:Label ID="lblSoluongmua" runat="server" Text="0"></asp:Label>
+&nbsp;sản phẩm )</div>
                                 </div>
                                 <div class="both"></div>
                                 <div id="menu">
@@ -81,8 +82,7 @@
                                             <a href="Dangnhap.aspx"><b>Đăng nhập</b></a> | <a href="Dangky.aspx"><b>Đăng ký</b></a>
                                         </div>
                                         <div class="content right">
-                                            <marquee scrollamount="5" scrolldelay="0" truespeed=""><a href="http://youmart.vn/td.html"></a></marquee>
-                                        </div>
+                                            &nbsp;</div>
                                     </div>
                                 </div>
                                 <div class="space"></div>
