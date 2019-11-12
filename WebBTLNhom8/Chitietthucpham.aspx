@@ -5,7 +5,7 @@
     <table style="width: 100%">
         <tr>
             <td style="height: 333px">
-                <asp:FormView ID="fvThongtin" runat="server" DataKeyNames="MaTP" DataSourceID="sqlThongtin" Height="109px" Width="100%" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" GridLines="Both">
+                <asp:FormView ID="fvThongtin" runat="server" DataKeyNames="MaTP" DataSourceID="sqlThongtin" Height="109px" Width="100%">
                     <EditItemTemplate>
                         MaTP:
                         <asp:Label ID="MaTPLabel1" runat="server" Text='<%# Eval("MaTP") %>' />
@@ -31,9 +31,6 @@
                         <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
                         &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                     </EditItemTemplate>
-                    <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
-                    <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-                    <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
                     <InsertItemTemplate>
                         Maloai:
                         <asp:TextBox ID="MaloaiTextBox" runat="server" Text='<%# Bind("Maloai") %>' />
@@ -59,58 +56,78 @@
                     <ItemTemplate>
                         <table style="width: 100%">
                             <tr>
-                                <td style="width: 134px">Mã thực phẩm</td>
+                                <td class="nhantinkhuyenmai" style="width: 175px">Mã thực phẩm</td>
                                 <td>
                                     <asp:Label ID="MaTPLabel" runat="server" Text='<%# Eval("MaTP") %>' />
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 134px">Mã loại</td>
+                                <td class="nhantinkhuyenmai" style="width: 175px">Mã Loại</td>
                                 <td>
                                     <asp:Label ID="MaloaiLabel" runat="server" Text='<%# Bind("Maloai") %>' />
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 134px">Tên thực phẩm</td>
+                                <td class="nhantinkhuyenmai" style="width: 175px">Tên thực phẩm</td>
                                 <td>
                                     <asp:Label ID="TenTPLabel" runat="server" Text='<%# Bind("TenTP") %>' />
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 134px">Đơn giá</td>
+                                <td class="nhantinkhuyenmai" style="width: 175px">Đơn giá</td>
                                 <td>
                                     <asp:Label ID="DongiaLabel" runat="server" Text='<%# Bind("Dongia") %>' />
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 134px">Số lượng có</td>
-                                <td>
+                                <td style="height: 17px; width: 175px;">Số lượng có</td>
+                                <td style="height: 17px">
                                     <asp:Label ID="SoluongcoLabel" runat="server" Text='<%# Bind("Soluongco") %>' />
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 134px">Mô tả</td>
+                                <td class="nhantinkhuyenmai" style="width: 175px">Mô tả</td>
                                 <td>
                                     <asp:Label ID="MotaLabel" runat="server" Text='<%# Bind("Mota") %>' />
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 134px">Ảnh</td>
+                                <td class="nhantinkhuyenmai" style="width: 175px">Ảnh</td>
                                 <td>
-                                    <asp:Image ID="Image1" runat="server" Height="170px" Width="209px" ImageUrl='<%# Eval("urlAnh", "{0}") %>' />
+                                    <asp:Image ID="Image1" runat="server" Height="182px" ImageUrl='<%# Eval("urlAnh", "{0}") %>' Width="294px" />
                                 </td>
                             </tr>
                         </table>
                         <br />
+                        <br />
 
                     </ItemTemplate>
-                    <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
                 </asp:FormView>
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 165px">Số lượng mua</td>
+                        <td>
+                            <asp:DropDownList ID="ddlSoluongmua" runat="server">
+                                <asp:ListItem Value="0">-- Lựa chọn số lượng mua --</asp:ListItem>
+                                <asp:ListItem>1</asp:ListItem>
+                                <asp:ListItem>2</asp:ListItem>
+                                <asp:ListItem>3</asp:ListItem>
+                                <asp:ListItem>4</asp:ListItem>
+                                <asp:ListItem>5</asp:ListItem>
+                                <asp:ListItem>6</asp:ListItem>
+                                <asp:ListItem>7</asp:ListItem>
+                                <asp:ListItem>8</asp:ListItem>
+                                <asp:ListItem>9</asp:ListItem>
+                            </asp:DropDownList>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="lblSoluongmua" runat="server" EnableTheming="True" ForeColor="Red" Text="Bạn chưa chọn số lượng mua" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
                 <br />
-                <asp:SqlDataSource ID="sqlThongtin" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" SelectCommand="SELECT * FROM [tblThucpham] WHERE ([MaTP] = @MaTP)">
+                <asp:SqlDataSource ID="sqlThongtin" runat="server" ConnectionString="<%$ ConnectionStrings:BTL_CSDLWEB_Nhom8ConnectionString %>" SelectCommand="SELECT * FROM [tblThucpham] WHERE ([MaTP] = @MaTP)">
                     <SelectParameters>
-                        <asp:Parameter DefaultValue="1" Name="MaTP" Type="Int32" />
+                        <asp:QueryStringParameter Name="MaTP" QueryStringField="MaTP" Type="Int32" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <br />
@@ -122,12 +139,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:LinkButton ID="lnkbtnGiohang" runat="server" PostBackUrl="~/Giohang.aspx">Giỏ Hàng</asp:LinkButton>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:LinkButton ID="lnkbtnClearCart" runat="server" OnClick="lnkbtnClearCart_Click">Xóa Giỏ Hàng</asp:LinkButton>
-            </td>
+                </td>
         </tr>
         <tr>
-            <td><br /><br /><br /><br /><br />
-                Cám ơn quý khách !</td>
+            <td><br /><br />
+                <asp:Label ID="lblSession" runat="server"></asp:Label>
+                <br />
+                <asp:Label ID="lblTest" runat="server"><br /><br />
+                Cám ơn quý khách !</asp:Label>
+            </td>
         </tr>
     </table>
 

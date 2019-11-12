@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -7,43 +8,64 @@ using System.Web.UI.WebControls;
 
 public partial class Chitietthucpham : System.Web.UI.Page
 {
+    public static String MaTP;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        List<InfoThucPham> lstThucpham = (List<InfoThucPham>)Session["cart"];
+        if (lstThucpham != null)
+        {
+            foreach (var item in lstThucpham)
+            {
+                lblSession.Text += "" + item.getMaTP() + "  " + item.getSoluongmua().ToString() + "<br/> <br/>";
+            }
+        }
     }
     protected void lnkbtnThemgiohang_Click(object sender, EventArgs e)
     {
-        String MaTP = "1";
-        int Soluongmua = 1;
-        if (Session["cart"] != null)
+        MaTP = Request.QueryString["MaTP"].Trim();
+        Label lblTenTP = null;
+        Label lblGiatien = null;
+        if (fvThongtin.Row != null)
         {
-            List<InfoThucPham> lstThucpham = (List<InfoThucPham>)Session["cart"];
-            Boolean flag = false;
-            foreach (var item in lstThucpham)
+            lblTenTP = (Label)fvThongtin.Row.FindControl("TenTPLabel");
+            lblGiatien = (Label)fvThongtin.Row.FindControl("DongiaLabel");
+            string TenTP = lblTenTP.Text;
+            string giatien = lblGiatien.Text;
+            int Soluongmua = int.Parse(ddlSoluongmua.SelectedValue.ToString());
+
+
+            if (Soluongmua != 0)
             {
-                if (item.getMaTP().Equals(MaTP))
+                if (Session["cart"] != null)
                 {
-                    item.setSoluongmuathem(Soluongmua);
-                    flag = true;
+                    List<InfoThucPham> lstThucpham = (List<InfoThucPham>)Session["cart"];
+                    Boolean flag = false;
+                    foreach (var item in lstThucpham)
+                    {
+                        if (item.getMaTP().Equals(MaTP))
+                        {
+                            item.setSoluongmuathem(Soluongmua);
+                            flag = true;
+                        }
+                    }
+                    if (!flag)
+                    {
+                        lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua));
+                        Session["cart"] = lstThucpham;
+                    }
                 }
+                else
+                {
+                    List<InfoThucPham> lstThucpham = new List<InfoThucPham>();
+                    lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua));
+                    Session["cart"] = lstThucpham;
+                }
+                Response.Redirect("Chitietthucpham.aspx?MaTP=" + MaTP);
             }
-            if (!flag)
+            else
             {
-                lstThucpham.Add(new InfoThucPham(MaTP, Soluongmua));
-                Session["cart"] = lstThucpham;
+                lblSoluongmua.Visible = true;
             }
         }
-        else
-        {
-            List<InfoThucPham> lstThucpham = new List<InfoThucPham>();
-            lstThucpham.Add(new InfoThucPham(MaTP, Soluongmua));
-            Session["cart"] = lstThucpham;
-        }
-        Response.Redirect("Chitietthucpham.aspx");
-    }
-    protected void lnkbtnClearCart_Click(object sender, EventArgs e)
-    {
-        Session.Contents.Remove("cart");
-        Response.Redirect("Chitietthucpham.aspx");
     }
 }
