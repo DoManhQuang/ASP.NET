@@ -16,8 +16,8 @@ public partial class Chitietthucpham : System.Web.UI.Page
         {
             foreach (var item in lstThucpham)
             {
-                lblSession.Text += "" + item.getMaTP() + "  " + item.getSoluongmua().ToString() + "  " + item.getTenTP() + "  " + item.getGiatien() +
-                    "<br/> <br/>";
+                //lblSession.Text += "" + item.getMaTP() + "  " + item.getSoluongmua().ToString() + "  " + item.getTenTP() + "  " + item.getGiatien() +
+                //    "<br/> <br/>";
             }
         }
     }
