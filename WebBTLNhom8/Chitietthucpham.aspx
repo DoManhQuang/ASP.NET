@@ -114,7 +114,7 @@
                     </tr>
                 </table>
                 <br />
-                <asp:SqlDataSource ID="sqlThongtin" runat="server" ConnectionString="<%$ ConnectionStrings:BTL_CSDLWEB_Nhom8ConnectionString %>" SelectCommand="SELECT * FROM [tblThucpham] WHERE ([MaTP] = @MaTP)">
+                <asp:SqlDataSource ID="sqlThongtin" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" SelectCommand="SELECT * FROM [tblThucpham] WHERE ([MaTP] = @MaTP)">
                     <SelectParameters>
                         <asp:QueryStringParameter Name="MaTP" QueryStringField="MaTP" Type="Int32" />
                     </SelectParameters>

@@ -109,6 +109,49 @@
                         <asp:Parameter Name="MaDH" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
+                <br />
+                <asp:SqlDataSource ID="sqLayMaDH" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sqlChitietDH" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" DeleteCommand="DELETE FROM [tblChitietDH] WHERE [MaCTDH] = @MaCTDH AND [MaTP] = @MaTP AND [MaDH] = @MaDH" InsertCommand="INSERT INTO [tblChitietDH] ([MaTP], [MaDH], [Soluongmua]) VALUES (@MaTP, @MaDH, @Soluongmua)" SelectCommand="SELECT * FROM [tblChitietDH]" UpdateCommand="UPDATE [tblChitietDH] SET [Soluongmua] = @Soluongmua WHERE [MaCTDH] = @MaCTDH AND [MaTP] = @MaTP AND [MaDH] = @MaDH">
+                    <DeleteParameters>
+                        <asp:Parameter Name="MaCTDH" Type="Int32" />
+                        <asp:Parameter Name="MaTP" Type="Int32" />
+                        <asp:Parameter Name="MaDH" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="MaTP" Type="Int32" />
+                        <asp:Parameter Name="MaDH" Type="Int32" />
+                        <asp:Parameter Name="Soluongmua" Type="Int32" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="Soluongmua" Type="Int32" />
+                        <asp:Parameter Name="MaCTDH" Type="Int32" />
+                        <asp:Parameter Name="MaTP" Type="Int32" />
+                        <asp:Parameter Name="MaDH" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+                <br />
+                <asp:SqlDataSource ID="sqlUpdatesoluongmua" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" DeleteCommand="DELETE FROM [tblThucpham] WHERE [MaTP] = @MaTP" InsertCommand="INSERT INTO [tblThucpham] ([Maloai], [TenTP], [Dongia], [Soluongco], [Mota], [urlAnh]) VALUES (@Maloai, @TenTP, @Dongia, @Soluongco, @Mota, @urlAnh)" SelectCommand="SELECT * FROM [tblThucpham]" UpdateCommand="UPDATE [tblThucpham] SET [Maloai] = @Maloai, [TenTP] = @TenTP, [Dongia] = @Dongia, [Soluongco] = @Soluongco, [Mota] = @Mota, [urlAnh] = @urlAnh WHERE [MaTP] = @MaTP">
+                    <DeleteParameters>
+                        <asp:Parameter Name="MaTP" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="Maloai" Type="Int32" />
+                        <asp:Parameter Name="TenTP" Type="String" />
+                        <asp:Parameter Name="Dongia" Type="String" />
+                        <asp:Parameter Name="Soluongco" Type="Int32" />
+                        <asp:Parameter Name="Mota" Type="String" />
+                        <asp:Parameter Name="urlAnh" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="Maloai" Type="Int32" />
+                        <asp:Parameter Name="TenTP" Type="String" />
+                        <asp:Parameter Name="Dongia" Type="String" />
+                        <asp:Parameter Name="Soluongco" Type="Int32" />
+                        <asp:Parameter Name="Mota" Type="String" />
+                        <asp:Parameter Name="urlAnh" Type="String" />
+                        <asp:Parameter Name="MaTP" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
     </table>
