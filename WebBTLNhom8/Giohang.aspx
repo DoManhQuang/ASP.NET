@@ -60,13 +60,13 @@
         <table style="width: 100%">
         <tr>
             <td>
-                <asp:Button ID="btnMuahangtiep" runat="server" Height="35px" Text="Tiếp tục mua hàng" Width="151px" />
+                <asp:Button ID="btnMuahangtiep" runat="server" Height="35px" Text="Tiếp tục mua hàng" Width="151px" OnClick="btnMuahangtiep_Click" />
             </td>
             <td>
                 <asp:Button ID="btnXoagiohang" runat="server" Height="35px" OnClick="btnXoagiohang_Click" Text="Xóa giỏ hàng" Width="138px" />
             </td>
             <td>
-                <asp:Button ID="btnDatmua" runat="server" Height="35px" Text="Đặt mua" Width="138px" />
+                <asp:Button ID="btnDatmua" runat="server" Height="35px" Text="Đặt mua" Width="138px" OnClick="btnDatmua_Click" />
             </td>
         </tr>
     </table>

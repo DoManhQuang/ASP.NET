@@ -47,4 +47,18 @@ public partial class Giohang : System.Web.UI.Page
             Response.Redirect("Giohang.aspx");
         }
     }
+
+    protected void btnDatmua_Click(object sender, EventArgs e)
+    {
+        if(Session["users"] != null)
+        {
+            Response.Redirect("web_datmua.aspx");
+        }
+        Response.Redirect("Dangnhap.aspx");
+    }
+
+    protected void btnMuahangtiep_Click(object sender, EventArgs e)
+    {
+
+    }
 }

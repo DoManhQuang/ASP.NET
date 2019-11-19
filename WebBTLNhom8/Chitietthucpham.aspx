@@ -107,18 +107,7 @@
                     <tr>
                         <td style="width: 165px">Số lượng mua</td>
                         <td>
-                            <asp:DropDownList ID="ddlSoluongmua" runat="server">
-                                <asp:ListItem Value="0">-- Lựa chọn số lượng mua --</asp:ListItem>
-                                <asp:ListItem>1</asp:ListItem>
-                                <asp:ListItem>2</asp:ListItem>
-                                <asp:ListItem>3</asp:ListItem>
-                                <asp:ListItem>4</asp:ListItem>
-                                <asp:ListItem>5</asp:ListItem>
-                                <asp:ListItem>6</asp:ListItem>
-                                <asp:ListItem>7</asp:ListItem>
-                                <asp:ListItem>8</asp:ListItem>
-                                <asp:ListItem>9</asp:ListItem>
-                            </asp:DropDownList>
+                            <asp:TextBox ID="txtSoluongmua" runat="server" Width="177px">1</asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Label ID="lblSoluongmua" runat="server" EnableTheming="True" ForeColor="Red" Text="Bạn chưa chọn số lượng mua" Visible="False"></asp:Label>
                         </td>

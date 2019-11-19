@@ -32,7 +32,7 @@ public partial class Chitietthucpham : System.Web.UI.Page
             lblGiatien = (Label)fvThongtin.Row.FindControl("DongiaLabel");
             string TenTP = lblTenTP.Text;
             string giatien = lblGiatien.Text;
-            int Soluongmua = int.Parse(ddlSoluongmua.SelectedValue.ToString());
+            int Soluongmua = int.Parse(txtSoluongmua.Text.Trim());
 
 
             if (Soluongmua != 0)
