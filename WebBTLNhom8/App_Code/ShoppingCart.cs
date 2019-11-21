@@ -26,6 +26,16 @@ public class ShoppingCart
     {
         return this.thucPhams;
     }
+
+    public int getLengthDS()
+    {
+        if(thucPhams == null)
+        {
+            return 0;
+        }
+        return this.thucPhams.Count();
+    }
+
     public int getTongTien()
     {
         int tongtien = 0;

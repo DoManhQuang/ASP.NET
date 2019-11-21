@@ -12,6 +12,7 @@ public class InfoThucPham
     private String TenTP;
     private String giatien;
     private int Soluongmua;
+    private String pathphoto;
 
     public InfoThucPham()
     {
@@ -23,6 +24,25 @@ public class InfoThucPham
         this.TenTP = TenTP;
         this.giatien = giatien;
         this.Soluongmua = Soluongmua;
+    }
+
+    public InfoThucPham(string maTP, string tenTP, string giatien, int soluongmua, string pathphoto)
+    {
+        MaTP = maTP;
+        TenTP = tenTP;
+        this.giatien = giatien;
+        Soluongmua = soluongmua;
+        this.pathphoto = pathphoto;
+    }
+
+    public String getPathPhoto()
+    {
+        return pathphoto;
+    }
+
+    public void setPathPhoto(String path)
+    {
+        this.pathphoto = path;
     }
 
     public String getMaTP()
@@ -71,6 +91,6 @@ public class InfoThucPham
 
     public override String ToString()
     {
-        return "ThucPham{" + "MaTP=" + MaTP + ", TenTP=" + TenTP + ", giatien=" + giatien + ", Soluongmua=" + Soluongmua + '}';
+        return "ThucPham{" + "MaTP=" + MaTP + ", TenTP=" + TenTP + ", giatien=" + giatien + ", Soluongmua=" + Soluongmua + ", Pathphoto= " + pathphoto + '}';
     }
 }

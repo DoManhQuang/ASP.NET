@@ -136,6 +136,8 @@
                 <br />
                 <asp:Label ID="lblTest" runat="server"><br /><br />
                 Cám ơn quý khách !</asp:Label>
+                <br />
+                <asp:SqlDataSource ID="sqlGetDataTP" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" SelectCommand="SELECT * FROM [tblThucpham]"></asp:SqlDataSource>
             </td>
         </tr>
     </table>

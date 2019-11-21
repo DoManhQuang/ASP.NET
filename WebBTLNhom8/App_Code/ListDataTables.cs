@@ -38,19 +38,17 @@ public class ListDataTables
     {
         DataTable dt = new DataTable();
         dt.Columns.AddRange(new DataColumn[] {
-                    new DataColumn("STT", typeof(string)),
                     new DataColumn("MaTP", typeof(string)),
                     new DataColumn("TenTP", typeof(string)),
+                    new DataColumn("Path", typeof(string)),
                     new DataColumn("Dongia",typeof(string)),
                     new DataColumn("Soluongmua",typeof(string)),
                     new DataColumn("Thanhtien",typeof(string))
         });
-        int index = 1;
         foreach (var item in cart.getDSThucPham())
         {
             int thanhTien = int.Parse(item.getGiatien()) * item.getSoluongmua();
-            dt.Rows.Add(index, item.getMaTP(), item.getTenTP(), item.getGiatien(), item.getSoluongmua(), thanhTien);
-            index += 1;
+            dt.Rows.Add(item.getMaTP(), item.getTenTP(), item.getPathPhoto(), item.getGiatien(), item.getSoluongmua(), thanhTien);
         }
         return dt;
     }

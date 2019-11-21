@@ -34,6 +34,14 @@ public partial class Chitietthucpham : System.Web.UI.Page
             string giatien = lblGiatien.Text;
             int Soluongmua = int.Parse(txtSoluongmua.Text.Trim());
 
+            // lấy dữ liệu Hàng
+            sqlGetDataTP.SelectCommand = "SELECT TenTP, Dongia, urlAnh " +
+                "FROM tblThucpham " +
+                "WHERE MaTP = '" + MaTP + "' ";
+            DataView dv = (DataView)sqlGetDataTP.Select(DataSourceSelectArguments.Empty);
+            //String getTenTP = dv.Table.Rows[0]["TenTP"].ToString().Trim();
+            //String getDongia = dv.Table.Rows[0]["Dongia"].ToString().Trim();
+            String geturlAnh = dv.Table.Rows[0]["urlAnh"].ToString().Trim();
 
             if (Soluongmua != 0)
             {
@@ -51,14 +59,14 @@ public partial class Chitietthucpham : System.Web.UI.Page
                     }
                     if (!flag)
                     {
-                        lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua));
+                        lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua, geturlAnh));
                         Session["cart"] = lstThucpham;
                     }
                 }
                 else
                 {
                     List<InfoThucPham> lstThucpham = new List<InfoThucPham>();
-                    lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua));
+                    lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua, geturlAnh));
                     Session["cart"] = lstThucpham;
                 }
                 Response.Redirect("Chitietthucpham.aspx?MaTP=" + MaTP);
