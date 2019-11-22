@@ -31,7 +31,9 @@
                         </EditItemTemplate>
                         <ItemTemplate>
                             <div style="margin: 20px auto">
-                                <asp:Label Font-Size="15px" ID="Label1" runat="server" Text='<%# Bind("TenTP") %>'></asp:Label>
+                                <asp:Label Font-Size="15px" ID="lblTenthucpham" runat="server" Text='<%# Bind("TenTP") %>'></asp:Label>
+                                <br />
+                                <asp:LinkButton ID="lnkbtnTenthucpham" runat="server" OnClick="lnkbtnTenthucpham_Click" Text='<%# Bind("TenTP") %>'></asp:LinkButton>
                             </div>
                         </ItemTemplate>
                         <ControlStyle Font-Size="15px" />
@@ -41,8 +43,7 @@
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
                     <asp:ImageField HeaderStyle-Font-Size="15px" DataImageUrlField="Path" DataImageUrlFormatString="~/{0}" HeaderText="Ảnh thực phẩm">
-
-                        <ControlStyle Height="50px" Width="100px" />
+                        <ControlStyle Height="70px" Width="100px"/>
                         <HeaderStyle Font-Size="15px"></HeaderStyle>
                         <ItemStyle Width="100px" Height="50px" />
                     </asp:ImageField>
