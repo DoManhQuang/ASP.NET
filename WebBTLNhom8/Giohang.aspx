@@ -41,8 +41,8 @@
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
                     <asp:ImageField HeaderStyle-Font-Size="15px" DataImageUrlField="Path" DataImageUrlFormatString="~/{0}" HeaderText="Ảnh thực phẩm">
-                        
-                        <ControlStyle Height="50px" Width="100px"/>
+
+                        <ControlStyle Height="50px" Width="100px" />
                         <HeaderStyle Font-Size="15px"></HeaderStyle>
                         <ItemStyle Width="100px" Height="50px" />
                     </asp:ImageField>
@@ -71,13 +71,13 @@
 
                                     <tr style="text-align: center;">
                                         <td>
-                                            <asp:ImageButton ID="imgbtnTang" runat="server" Height="20px" ImageUrl="~/data/img/add-circle-green-512.png" Width="5px" OnClick="imgbtnTang_Click" />
+                                            <asp:ImageButton  CommandArgument="<%# Container.DataItemIndex %>" CommandName="Select" ID="imgbtnTang" runat="server" Height="20px" ImageUrl="~/data/img/add-circle-green-512.png" Width="5px" OnClick="imgbtnTang_Click" RowIndex="<%# Container.DisplayIndex %>"/>
                                         </td>
                                         <td>
                                             <asp:Label Font-Size="15px" ID="lblSoluongmua" runat="server" Text='<%# Bind("Soluongmua") %>'></asp:Label>
                                         </td>
                                         <td>
-                                            <asp:ImageButton ID="imgbtnGiam" runat="server" Height="20px" ImageUrl="~/data/img/05-512.png" Width="5px" OnClick="imgbtnGiam_Click" />
+                                            <asp:ImageButton CommandArgument="<%# Container.DataItemIndex %>" CommandName="Select" ID="imgbtnGiam" runat="server" Height="20px" ImageUrl="~/data/img/05-512.png" Width="5px" OnClick="imgbtnGiam_Click" RowIndex="<%# Container.DisplayIndex %>" />
                                         </td>
                                     </tr>
 

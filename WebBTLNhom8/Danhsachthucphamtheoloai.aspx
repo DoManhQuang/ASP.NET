@@ -13,7 +13,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Giá tiền/đơn vị tính"></asp:Label>
                 <br />
                 <br />
-                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Chitietthucpham.aspx?MaTP=1" OnClick="LinkButton1_Click">Xem thông tin</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Xem thông tin</asp:LinkButton>
             </td>
         </tr>
     </table>
