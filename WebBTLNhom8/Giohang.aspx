@@ -71,7 +71,7 @@
 
                                     <tr style="text-align: center;">
                                         <td>
-                                            <asp:ImageButton  CommandArgument="<%# Container.DataItemIndex %>" CommandName="Select" ID="imgbtnTang" runat="server" Height="20px" ImageUrl="~/data/img/add-circle-green-512.png" Width="5px" OnClick="imgbtnTang_Click" RowIndex="<%# Container.DisplayIndex %>"/>
+                                            <asp:ImageButton CommandArgument="<%# Container.DataItemIndex %>" CommandName="Select" ID="imgbtnTang" runat="server" Height="20px" ImageUrl="~/data/img/add-circle-green-512.png" Width="5px" OnClick="imgbtnTang_Click" RowIndex="<%# Container.DisplayIndex %>" />
                                         </td>
                                         <td>
                                             <asp:Label Font-Size="15px" ID="lblSoluongmua" runat="server" Text='<%# Bind("Soluongmua") %>'></asp:Label>
@@ -124,14 +124,16 @@
 
         <table style="width: 100%; height: 30px; margin-bottom: 50px;" border="1">
             <tr>
-                <td style="width: 30%; padding: 5px; font-size: 15px;">
-                    <asp:Label ID="Label1" runat="server" Text="Tổng Tiền"></asp:Label>
+                <td style="width: 30%; font-size: 15px;">
+                    <div style="margin: 20px auto; margin-left: 10px; float: left;">
+                        <asp:Label ID="Label1" runat="server" Text="Tổng Tiền"></asp:Label>
+                    </div>
                 </td>
 
-                <td style="width: 70%; padding: 5px; font-size: 15px;">
-                    <p style="float: right;">
+                <td style="width: 70%; font-size: 15px;">
+                    <div style="margin: 20px auto; margin-right: 10px; float: right;">
                         <asp:Label ID="lblTongtien" runat="server"></asp:Label>
-                    </p>
+                    </div>
                 </td>
             </tr>
         </table>

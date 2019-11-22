@@ -11,12 +11,9 @@ public partial class web_datmua : System.Web.UI.Page
     ShoppingCart cart = null;
     Quang_Khachhang khachhang = null;
     List<InfoThucPham> lstThucpham = null;
-    Quang_Khachhang khachhangtest = new Quang_Khachhang("1", "Quang", "123456", "quangdm@ghtk.vn");
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["users"] = khachhangtest;
-
         if (Session["users"] != null)
         {
             khachhang = (Quang_Khachhang)Session["users"];
@@ -77,15 +74,18 @@ public partial class web_datmua : System.Web.UI.Page
                 
                 foreach (var item in lstThucpham)
                 {
-                    // insert tblCTDH
-                    string sqlInsert = "INSERT INTO tblChitietDH values ('" + item.getMaTP()+"', '"+MaDH+"', '"+item.getSoluongmua()+"')";
-                    sqlChitietDH.InsertCommand = sqlInsert;
-                    sqlChitietDH.Insert();
+                    if (item.getSoluongmua() > 0)
+                    {
+                        // insert tblCTDH
+                        string sqlInsert = "INSERT INTO tblChitietDH values ('" + item.getMaTP() + "', '" + MaDH + "', '" + item.getSoluongmua() + "')";
+                        sqlChitietDH.InsertCommand = sqlInsert;
+                        sqlChitietDH.Insert();
 
-                    // Update số lượng sản phẩm 
-                    string sqlUpdate = "UPDATE tblThucpham SET Soluongco = Soluongco - '" + item.getSoluongmua() + "' WHERE MaTP = '" + item.getMaTP() + "'";
-                    sqlUpdatesoluongmua.UpdateCommand = sqlUpdate;
-                    sqlUpdatesoluongmua.Update();
+                        // Update số lượng sản phẩm 
+                        string sqlUpdate = "UPDATE tblThucpham SET Soluongco = Soluongco - '" + item.getSoluongmua() + "' WHERE MaTP = '" + item.getMaTP() + "'";
+                        sqlUpdatesoluongmua.UpdateCommand = sqlUpdate;
+                        sqlUpdatesoluongmua.Update();
+                    }
                 }
                 if (Session["cart"] != null)
                 {
