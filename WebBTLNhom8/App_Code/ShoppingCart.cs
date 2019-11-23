@@ -41,7 +41,10 @@ public class ShoppingCart
         int tongtien = 0;
         foreach (var item in thucPhams)
         {
-            tongtien += (int.Parse(item.getGiatien()) * item.getSoluongmua());
+            if (item.getCKBMua())
+            {
+                tongtien += (int.Parse(item.getGiatien()) * item.getSoluongmua());
+            }
         }
         return tongtien;
     }

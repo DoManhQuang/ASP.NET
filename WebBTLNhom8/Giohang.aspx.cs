@@ -132,4 +132,30 @@ public partial class Giohang : System.Web.UI.Page
             Response.Redirect("Chitietthucpham.aspx?MaTP=" + gvlblMaTP.Text.Trim());
         }
     }
+
+    protected void ckbMua_CheckedChanged(object sender, EventArgs e)
+    {
+        
+        //CheckBox ckbMua = sender as CheckBox;
+        //if (!ckbMua.Checked)
+        //{
+        //    int rowIndex = Convert.ToInt32(ckbMua.Attributes["RowIndex"]);
+        //    Label gvlblMaTP = null;
+        //    List<InfoThucPham> lstThucpham = (List<InfoThucPham>)Session["cart"];
+        //    ShoppingCart cart = new ShoppingCart(lstThucpham);
+        //    if (gvGiohang.Rows != null)
+        //    {
+        //        gvlblMaTP = (Label)gvGiohang.Rows[rowIndex].FindControl("lblMaTP");
+        //        foreach (var item in cart.getDSThucPham())
+        //        {
+        //            if (item.getMaTP().Equals(gvlblMaTP.Text.Trim()))
+        //            {
+        //                item.setCKBMua(false);
+        //            }
+        //        }
+        //        Session["cart"] = cart.getDSThucPham();
+        //        Response.Redirect("Giohang.aspx");
+        //    }
+        //}
+    }
 }

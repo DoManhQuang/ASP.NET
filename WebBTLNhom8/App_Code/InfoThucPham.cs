@@ -13,7 +13,7 @@ public class InfoThucPham
     private String giatien;
     private int Soluongmua;
     private String pathphoto;
-
+    private bool ckbMua;
     public InfoThucPham()
     {
     }
@@ -33,6 +33,26 @@ public class InfoThucPham
         this.giatien = giatien;
         Soluongmua = soluongmua;
         this.pathphoto = pathphoto;
+    }
+
+    public InfoThucPham(string maTP, string tenTP, string giatien, int soluongmua, string pathphoto, bool ckbMua)
+    {
+        MaTP = maTP;
+        TenTP = tenTP;
+        this.giatien = giatien;
+        Soluongmua = soluongmua;
+        this.pathphoto = pathphoto;
+        this.ckbMua = ckbMua;
+    }
+
+    public bool getCKBMua()
+    {
+        return ckbMua;
+    }
+
+    public void setCKBMua(bool ckb)
+    {
+        this.ckbMua = ckb;
     }
 
     public String getPathPhoto()

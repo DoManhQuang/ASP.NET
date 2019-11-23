@@ -31,8 +31,6 @@
                         </EditItemTemplate>
                         <ItemTemplate>
                             <div style="margin: 20px auto">
-                                <asp:Label Font-Size="15px" ID="lblTenthucpham" runat="server" Text='<%# Bind("TenTP") %>'></asp:Label>
-                                <br />
                                 <asp:LinkButton RowIndex="<%# Container.DisplayIndex %>" CommandArgument="<%# Container.DataItemIndex %>" ID="lnkbtnTenthucpham" runat="server" OnClick="lnkbtnTenthucpham_Click" Text='<%# Bind("TenTP") %>'></asp:LinkButton>
                             </div>
                         </ItemTemplate>
@@ -43,7 +41,7 @@
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
                     <asp:ImageField HeaderStyle-Font-Size="15px" DataImageUrlField="Path" DataImageUrlFormatString="~/{0}" HeaderText="Ảnh thực phẩm">
-                        <ControlStyle Height="70px" Width="100px"/>
+                        <ControlStyle Height="70px" Width="100px" />
                         <HeaderStyle Font-Size="15px"></HeaderStyle>
                         <ItemStyle Width="100px" Height="50px" />
                     </asp:ImageField>
@@ -106,6 +104,19 @@
 
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Mua" SortExpression="ckbMua">
+                        <EditItemTemplate>
+                            <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("ckbMua") %>' />
+                        </EditItemTemplate>
+
+                        <ItemTemplate>
+                            <div style="margin: 20px auto">
+                                <asp:CheckBox RowIndex="<%# Container.DisplayIndex %>" CommandArgument="<%# Container.DataItemIndex %>" ID="ckbMua" runat="server" Checked='<%# Bind("ckbMua") %>' OnCheckedChanged="ckbMua_CheckedChanged" />
+                            </div>
+                        </ItemTemplate>
+                        <ControlStyle Height="10px" Width="10px" />
+                        <ItemStyle Width="50px" />
+                    </asp:TemplateField>
                 </Columns>
                 <FooterStyle BackColor="White" ForeColor="#000066" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -154,5 +165,5 @@
         </table>
         <br />
         <asp:Label ID="lblCapnhap" runat="server"></asp:Label>
-</asp:Content>
+&nbsp;</asp:Content>
 
