@@ -33,7 +33,7 @@
                             <div style="margin: 20px auto">
                                 <asp:Label Font-Size="15px" ID="lblTenthucpham" runat="server" Text='<%# Bind("TenTP") %>'></asp:Label>
                                 <br />
-                                <asp:LinkButton ID="lnkbtnTenthucpham" runat="server" OnClick="lnkbtnTenthucpham_Click" Text='<%# Bind("TenTP") %>'></asp:LinkButton>
+                                <asp:LinkButton RowIndex="<%# Container.DisplayIndex %>" CommandArgument="<%# Container.DataItemIndex %>" ID="lnkbtnTenthucpham" runat="server" OnClick="lnkbtnTenthucpham_Click" Text='<%# Bind("TenTP") %>'></asp:LinkButton>
                             </div>
                         </ItemTemplate>
                         <ControlStyle Font-Size="15px" />
