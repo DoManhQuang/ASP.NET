@@ -65,7 +65,9 @@
                                         <li class=""><a href="#" title="Khuyến mại">Khuyến mại</a></li>
                                         <li class=""><a href="#" title="Tư vấn thực đơn">Tư vấn thực đơn</a></li>
                                         <li class=""><a href="#" title="Liên hệ">Liên hệ</a></li>
-                                        <li class="last "><a href="#" title="Forum">Forum</a></li>
+                                        <li class="last ">
+                                            <asp:LinkButton ID="lnkbtnDonhang" runat="server" OnClick="lnkbtnDonhang_Click" Visible="False">Đơn hàng</asp:LinkButton>
+                                        </li>
                                     </ul>
                                     <div class="block_search">
                                         <form method="get" action="http://youmart.vn/">
