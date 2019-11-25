@@ -11,4 +11,16 @@ public partial class users_Chitietthongtindonhang : System.Web.UI.Page
     {
 
     }
+
+    protected void lnkbtnTenthucpham_Click(object sender, EventArgs e)
+    {
+        LinkButton lnkbtnTenthucpham = sender as LinkButton;
+        int rowIndex = Convert.ToInt32(lnkbtnTenthucpham.Attributes["RowIndex"]);
+        Label gvlblMaTP = null;
+        if (gvDSThucpham.Rows != null)
+        {
+            gvlblMaTP = (Label)gvDSThucpham.Rows[rowIndex].FindControl("lblMaTP");
+            Response.Redirect("Chitietthucpham.aspx?MaTP=" + gvlblMaTP.Text.Trim());
+        }
+    }
 }
