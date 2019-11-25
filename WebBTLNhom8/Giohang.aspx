@@ -165,5 +165,7 @@
         </table>
         <br />
         <asp:Label ID="lblCapnhap" runat="server"></asp:Label>
-&nbsp;</asp:Content>
+&nbsp;<br />
+    <asp:Label ID="lblThongbao" runat="server" Font-Size="14px" ForeColor="Red" Text="Thông báo : Bạn chưa mua hàng !" Visible="False"></asp:Label>
+</asp:Content>
 

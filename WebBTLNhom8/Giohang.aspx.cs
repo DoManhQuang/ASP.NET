@@ -52,11 +52,18 @@ public partial class Giohang : System.Web.UI.Page
     {
         //Quang_Khachhang khachhangtest = new Quang_Khachhang("1", "Quang", "123456", "quangdm@ghtk.vn");
         //Session["users"] = khachhangtest;
-        if (Session["users"] != null)
+        if (Session["cart"] != null)
         {
-            Response.Redirect("web_datmua.aspx");
+            if (Session["users"] != null)
+            {
+                Response.Redirect("web_datmua.aspx");
+            }
+            Response.Redirect("Dangnhap.aspx");
         }
-        Response.Redirect("Dangnhap.aspx");
+        else
+        {
+            lblThongbao.Visible = true;
+        }
     }
 
     protected void imgbtnTang_Click(object sender, ImageClickEventArgs e)
