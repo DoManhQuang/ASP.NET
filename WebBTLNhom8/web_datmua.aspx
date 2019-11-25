@@ -22,7 +22,7 @@
                 <asp:Label ID="Label2" runat="server" Text="Địa chỉ"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtDiachi" runat="server" Height="120px" TextMode="MultiLine" Width="242px"></asp:TextBox>
+                <asp:TextBox ID="txtDiachi" runat="server" Height="120px" TextMode="MultiLine" Width="242px" AutoPostBack="True"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="lblDcerr" runat="server" ForeColor="Red" Text="Bạn cần nhập *" Visible="False"></asp:Label>
                 <br />

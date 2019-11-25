@@ -11,15 +11,14 @@ public partial class web_datmua : System.Web.UI.Page
     ShoppingCart cart = null;
     Quang_Khachhang khachhang = null;
     List<InfoThucPham> lstThucpham = null;
-    
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["users"] != null)
         {
             khachhang = (Quang_Khachhang)Session["users"];
-            txtHoten.Text = khachhang.getTenKH();
-            txtEmail.Text = khachhang.getEmail();
-            txtSdt.Text = khachhang.getSdt();
+            //txtHoten.Text = khachhang.getTenKH();
+            //txtEmail.Text = khachhang.getEmail();
+            //txtSdt.Text = khachhang.getSdt();
         }
         if(Session["cart"] != null)
         {
@@ -38,6 +37,8 @@ public partial class web_datmua : System.Web.UI.Page
         if (Session["users"] != null)
         {
             String DCnhanhang = txtDiachi.Text.Trim();
+            String hoten = txtHoten.Text.Trim();
+            String sdt = txtSdt.Text.Trim();
             String yeuCaukhac = ddlYeucau.SelectedItem.ToString();
             String tongtien = cart.getTongTien().ToString();
             String MaTK = khachhang.getMaKH();
@@ -59,8 +60,11 @@ public partial class web_datmua : System.Web.UI.Page
             }
             else 
             {
-                sqlDatmua.InsertCommand = "insert into tblDonhang (MaTK, Diachinhanhang, Yeucaukhac, Tongtien) values " +
-                 "('" + MaTK + "', N'" + DCnhanhang + "', N'" + yeuCaukhac + "', '" + tongtien + "')";
+                String info = "Tên Khách Hàng : "+hoten + ", Số Điện thoại : " + sdt + ", Địa chỉ : ";
+                String tinhtrang = "Chờ xác nhận đơn hàng";
+                DCnhanhang = info + DCnhanhang;
+                sqlDatmua.InsertCommand = "insert into tblDonhang (MaTK, Diachinhanhang, Yeucaukhac, Tongtien, Tinhtrang) values " +
+                 "('" + MaTK + "', N'" + DCnhanhang + "', N'" + yeuCaukhac + "', '" + tongtien + "', N'" + tinhtrang + "')";
                 sqlDatmua.Insert();
 
                 sqLayMaDH.SelectCommand = "SELECT TOP 1 MaDH " +
