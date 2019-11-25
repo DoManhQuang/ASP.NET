@@ -50,8 +50,8 @@ public partial class Giohang : System.Web.UI.Page
 
     protected void btnDatmua_Click(object sender, EventArgs e)
     {
-        Quang_Khachhang khachhangtest = new Quang_Khachhang("1", "Quang", "123456", "quangdm@ghtk.vn");
-        Session["users"] = khachhangtest;
+        //Quang_Khachhang khachhangtest = new Quang_Khachhang("1", "Quang", "123456", "quangdm@ghtk.vn");
+        //Session["users"] = khachhangtest;
         if (Session["users"] != null)
         {
             Response.Redirect("web_datmua.aspx");
