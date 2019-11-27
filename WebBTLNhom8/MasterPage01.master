@@ -58,6 +58,7 @@
                                     <div class="header_cart">
                                         <a href="Giohang.aspx" title="Giỏ hàng">Giỏ hàng</a> (<asp:Label ID="lblSoluongmua" runat="server" Text="0"></asp:Label>
                                         &nbsp;sản phẩm )
+                                   
                                     </div>
                                 </div>
                                 <div class="both"></div>
@@ -87,10 +88,10 @@
                                         <div class="date left">
                                             <%--                                            <a href="Dangnhap.aspx"><b>Đăng nhập</b></a> | <a href="Dangky.aspx"><b>Đăng ký</b></a>--%><asp:LinkButton ID="lnkbtnDangnhap" runat="server" PostBackUrl="~/Dangnhap.aspx">Đăng nhập</asp:LinkButton>
                                             &nbsp;<asp:LinkButton ID="lnkbtnLogout" runat="server" OnClick="lnkbtnLogout_Click">|</asp:LinkButton>
-&nbsp;<asp:LinkButton ID="lnkbtnDangky" runat="server" PostBackUrl="~/Dangky.aspx">Đăng ký</asp:LinkButton>
+                                            &nbsp;<asp:LinkButton ID="lnkbtnDangky" runat="server" PostBackUrl="~/Dangky.aspx">Đăng ký</asp:LinkButton>
                                         </div>
                                         <div class="content right" style="float: right;">
-                                            <a style="float:right">&nbsp;<asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtintaikhoan.aspx" OnClick="lnkbtnTaikhoan_Click">Name</asp:LinkButton>
+                                            <a style="float: right">&nbsp;<asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtintaikhoan.aspx" OnClick="lnkbtnTaikhoan_Click">Name</asp:LinkButton>
                                             </a>
                                         </div>
                                     </div>
@@ -103,77 +104,36 @@
                                             <td width="1%">
                                                 <div class="col_left">
                                                     <div class="danhmucsp">
-                                                        <h3>&nbsp;</h3>
                                                         <div class="content">
+                                                            <table class="auto-style1">
+                                                                <tr style="padding-bottom: 10px">
+                                                                    <td style="background-color: green; height: 30px; font-size: 10pt; line-height: 30px; color: white; text-align: center; font-family: Tahoma"><b>DANH MỤC SẢN PHẨM</b></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <br />
+                                                                        <asp:DataList ID="DataList1" runat="server" DataKeyField="Maloai" DataSourceID="SqlDsDanhMuc" Width="100%" CssClass="auto-style2">
+                                                                            <ItemTemplate>
+                                                                                <table style="width: 100%">
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="text-align: left; font-family: Tahoma" href="Danhsachthucphamtheoloai.aspx?ID=<%# Eval("Maloai") %>"><%# Eval("TenLoai") %></a><hr />
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                                <br />
+                                                                            </ItemTemplate>
+                                                                        </asp:DataList>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <br />
                                                             <script type="text/javascript">var array_menu_close = [];</script>
                                                             <script type="text/javascript">array_menu_close[0] = "group_cat_224";</script>
-                                                            <div class="menu_header "><a href="Danhsachsanpham.aspx" style="color: red">SẢN PHẨM</a></div>
-                                                            <%--<div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">THỊT SẠCH</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_224" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/thit-lon_dm49.html&amp;group=brand">Thịt lợn</a> (31)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/thit-bo-ta_dm66.html&amp;group=brand">Thịt bò ta</a> (13)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/gia-cam_dm73.html&amp;group=brand">Gia cầm</a> (25)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/tp-che-bien-tu-thit_dm312.html&amp;group=brand">TP chế biến từ thịt</a> (7)</div>
+                                                            <div class="menu_header ">
+                                                                <asp:SqlDataSource ID="SqlDsDanhMuc" runat="server" ConnectionString="<%$ ConnectionStrings:BTLASPConnectionString %>" SelectCommand="SELECT * FROM [tblLoaiTP]"></asp:SqlDataSource>
                                                             </div>
-                                                            <script type="text/javascript">array_menu_close[1] = "group_cat_226";</script>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">RAU AN TOÀN</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_226" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/rau-xanh_dm231.html&amp;group=brand">Rau xanh</a> (34)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/cu-qua_dm232.html&amp;group=brand">Củ quả</a> (43)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/rau-gia-vi_dm249.html&amp;group=brand">Rau gia vị</a> (22)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/nam-moc-nhi_dm230.html&amp;group=brand">Nấm, mộc nhĩ</a> (18)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/loai-tinh-bap_dm470.html&amp;group=brand">Loại tính bắp</a> (1)</div>
-                                                            </div>
-                                                            <script type="text/javascript">array_menu_close[2] = "group_cat_225";</script>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">THỦY HẢI SẢN</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_225" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/thuy-san-nuoc-ngot_dm233.html&amp;group=brand">Thủy sản nước ngọt</a> (31)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/hai-san-tuoi-song_dm234.html&amp;group=brand">Hải sản tươi sống</a> (21)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/thuy-san-dong-lanh_dm235.html&amp;group=brand">Thủy sản đông lạnh</a> (16)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/thuy-hai-san-kho_dm379.html&amp;group=brand">Thủy, hải sản khô</a> (4)</div>
-                                                            </div>
-                                                            <script type="text/javascript">array_menu_close[3] = "group_cat_227";</script>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">LƯƠNG THỰC</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_227" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/dau-lac_dm238.html&amp;group=brand">Đậu, Lạc</a> (11)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/gao-cac-loai_dm236.html&amp;group=brand">Gạo các loại</a> (9)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/bun-mien-mi-tom_dm377.html&amp;group=brand">Bún, miến, Mì tôm</a> (30)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/khac_dm237.html&amp;group=brand">Khác</a> (2)</div>
-                                                            </div>
-                                                            <script type="text/javascript">array_menu_close[4] = "group_cat_380";</script>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">ĐẶC SẢN VÙNG MIỀN</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_380" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/gao-nep-tu-le_dm451.html&amp;group=brand">Gạo nếp Tú Lệ</a> (1)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/thit-bo-hmong_dm434.html&amp;group=brand">Thịt bò HMông</a> (10)</div>
-                                                            </div>
-                                                            <script type="text/javascript">array_menu_close[5] = "group_cat_228";</script>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">TẠP HÓA</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_228" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/dau-an_dm240.html&amp;group=brand">Dầu ăn</a> (11)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/nuoc-mam_dm239.html&amp;group=brand">Nước mắm</a> (10)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/gia-vi_dm241.html&amp;group=brand">Gia vị</a> (19)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/tuong-cac-loai_dm244.html&amp;group=brand">Tương các loại</a> (6)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/bot-che-bien_dm267.html&amp;group=brand">Bột chế biến</a> (9)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/my-chinh_dm446.html&amp;group=brand">Mỳ chính</a> (6)</div>
-                                                            </div>
-                                                            <script type="text/javascript">array_menu_close[6] = "group_cat_223";</script>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">HOA QUẢ</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_223" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/hq-viet-nam_dm250.html&amp;group=brand">HQ Việt Nam</a> (26)</div>
-                                                            </div>
-                                                            <script type="text/javascript">array_menu_close[7] = "group_cat_268";</script>
-                                                            <div class="menu_header "><a href="http://youmart.vn/duong-sua-banh-keo_dm268.html">ĐƯỜNG SỮA BÁNH KẸO</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_268" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/sua-vinamilk_dm292.html&amp;group=brand">Sữa Vinamilk</a> (61)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/duong-cac-loai_dm479.html&amp;group=brand">Đường các loại</a> (3)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/banh-keo_dm475.html&amp;group=brand">Bánh kẹo</a> (11)</div>
-                                                            </div>
-                                                            <script type="text/javascript">array_menu_close[8] = "group_cat_101";</script>
-                                                            <div class="menu_header "><a href="Danhsachthucphamtheoloai.aspx">TRỨNG, ĐẬU PHỤ</a></div>
-                                                            <div class="menu_cat_group" id="group_cat_101" style="display: none;">
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/dau_dm448.html&amp;group=brand">Đậu</a> (4)</div>
-                                                                <div class="sub_menu_cat"><a href="http://youmart.vn/trung_dm447.html&amp;group=brand">Trứng</a> (5)</div>
-                                                            </div>--%>
                                                             <input type="hidden" id="menu_open" value="">
                                                             <script type="text/javascript">
                                                                 //close menu tap on page load
@@ -183,18 +143,9 @@
                                                                 }
                                                             </script>
                                                         </div>
-                                                        <div class="module_footer"></div>
-                                                    </div>
-
-                                                    <div>
-                                                        <a href="http://youmart.vn/thuy-hai-san_dm225.html">
-                                                            <img border="0" src="./youmart.com.vn - Siêu thị thực phẩm trực tuyến hàng đầu Việt nam_files/9_35.jpg" width="200" height="150"></a><div class="spacer"></div>
-                                                        <a href="http://youmart.vn/rau-an-toan_dm226.html">
-                                                            <img border="0" src="./youmart.com.vn - Siêu thị thực phẩm trực tuyến hàng đầu Việt nam_files/13_39.jpg" width="200" height="150"></a><div class="spacer"></div>
-                                                        <a href="http://youmart.vn/thit-sach_dm224.html">
-                                                            <img border="0" src="./youmart.com.vn - Siêu thị thực phẩm trực tuyến hàng đầu Việt nam_files/10_28.jpg" width="200" height="150"></a><div class="spacer"></div>
-                                                        <a href="http://youmart.vn/hoa-qua_dm223.html">
-                                                            <img border="0" src="./youmart.com.vn - Siêu thị thực phẩm trực tuyến hàng đầu Việt nam_files/11_34.jpg" width="200" height="150"></a><div class="spacer"></div>
+                                                        <div class="module_footer">
+                                                            <br />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -277,6 +228,7 @@
                                             <div><strong>Mã số thuế:</strong> 0104520765 Do Sở kế hoạch và đầu tư TP Hà Nội cấp ngày 11/03/2010</div>
                                             <div><strong>Điện thoại:</strong> 024 3206 6868 ; 024 3208 6868 </div>
                                             <strong>Fax:</strong> 024 3785 5252
+                                       
                                         </div>
                                         <div><strong>Website:</strong> http://youmart.vn ; Email: sieuthi@youmart.vn </div>
                                     </div>
