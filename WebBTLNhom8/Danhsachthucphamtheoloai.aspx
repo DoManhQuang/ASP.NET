@@ -1,22 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage01.master" AutoEventWireup="true" CodeFile="Danhsachthucphamtheoloai.aspx.cs" Inherits="Danhsachthucphamtheoloai" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h3>Danh sách thực phẩm theo loại</h3>
-    <table style="width: 100%">
-        <tr>
-            <td>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/youmart.com.vn - Siêu thị thực phẩm trực tuyến hàng đầu Việt nam_files/961_1336_120.jpg" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="Label1" runat="server" Text="Giá tiền/đơn vị tính"></asp:Label>
-                <br />
-                <br />
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Xem thông tin</asp:LinkButton>
-            </td>
-        </tr>
-    </table>
+    <br />
+    <p>
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="MaTP" DataSourceID="SqlDsThucPham" RepeatColumns="3" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" GridLines="Horizontal" ForeColor="Black">
+            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+            <ItemTemplate>
+                    <table style="width: 100%; text-align:center">
+                        <tr>
+                            <td>
+                                <a href="Chitietthucpham.aspx?MaTP=<%# Eval("MaTP") %>"><asp:Image ID="Image1" runat="server" Height="150px" ImageUrl='<%# Eval("urlAnh", "~/images/{0}") %>' Width="150px" /></a>
+                                <br />
+                                <a href="Chitietthucpham.aspx?MaTP=<%# Eval("MaTP") %>"><asp:Label ID="TenTPLabel" runat="server" Text='<%# Eval("TenTP") %>' style="color: #009900" /></a>
+                                <br />
+                                <span class="pro_detail_offer">Giá:
+                                <asp:Label ID="DongiaLabel" runat="server" Text='<%# Eval("Dongia") %>' />
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                </ItemTemplate>
+            <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+        </asp:DataList>
+        <asp:SqlDataSource ID="SqlDsThucPham" runat="server" ConnectionString="<%$ ConnectionStrings:BTLASPConnectionString %>" SelectCommand="SELECT [MaTP], [TenTP], [Dongia], [urlAnh] FROM [tblThucpham] WHERE ([Maloai] = @Maloai)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="Maloai" QueryStringField="Maloai" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+    </p>
+    <p>&nbsp;</p>
+    
+                
+            
 
 </asp:Content>
 

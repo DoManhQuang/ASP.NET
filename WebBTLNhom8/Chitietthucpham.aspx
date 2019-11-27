@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage01.master" AutoEventWireup="true" CodeFile="Chitietthucpham.aspx.cs" Inherits="Chitietthucpham" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h3>Trang chi tiết thực phẩm</h3>
+    <p>&nbsp;</p>
     <table style="width: 100%">
-        <tr>
+        <%--<tr>
             <td style="height: 333px">
                 <asp:FormView ID="fvThongtin" runat="server" DataKeyNames="MaTP" DataSourceID="sqlThongtin" Height="109px" Width="100%">
                     <EditItemTemplate>
@@ -103,39 +104,142 @@
 
                     </ItemTemplate>
                 </asp:FormView>
-                <table style="width: 100%">
-                    <tr>
-                        <td style="width: 165px">Số lượng mua</td>
-                        <td>
-                            <asp:TextBox ID="txtSoluongmua" runat="server" Width="177px">1</asp:TextBox>
+            </tr>--%>
+            <tr>
+                <td style="height: 177px">
+                    <asp:FormView ID="fvThongtin" runat="server" DataSourceID="SqlDataSource1">
+                        <EditItemTemplate>
+                            TenTP:
+                       
+                        <asp:TextBox ID="TenTPTextBox" runat="server" Text='<%# Bind("TenTP") %>' />
+                            <br />
+                            Dongia:
+                       
+                        <asp:TextBox ID="DongiaTextBox" runat="server" Text='<%# Bind("Dongia") %>' />
+                            <br />
+                            Mota:
+                       
+                        <asp:TextBox ID="MotaTextBox" runat="server" Text='<%# Bind("Mota") %>' />
+                            <br />
+                            Soluongco:
+                       
+                        <asp:TextBox ID="SoluongcoTextBox" runat="server" Text='<%# Bind("Soluongco") %>' />
+                            <br />
+                            urlAnh:
+                       
+                        <asp:TextBox ID="urlAnhTextBox" runat="server" Text='<%# Bind("urlAnh") %>' />
+                            <br />
+                            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                        </EditItemTemplate>
+                        <InsertItemTemplate>
+                            TenTP:
+                       
+                        <asp:TextBox ID="TenTPTextBox" runat="server" Text='<%# Bind("TenTP") %>' />
+                            <br />
+                            Dongia:
+                       
+                        <asp:TextBox ID="DongiaTextBox" runat="server" Text='<%# Bind("Dongia") %>' />
+                            <br />
+                            Mota:
+                       
+                        <asp:TextBox ID="MotaTextBox" runat="server" Text='<%# Bind("Mota") %>' />
+                            <br />
+                            Soluongco:
+                       
+                        <asp:TextBox ID="SoluongcoTextBox" runat="server" Text='<%# Bind("Soluongco") %>' />
+                            <br />
+                            urlAnh:
+                       
+                        <asp:TextBox ID="urlAnhTextBox" runat="server" Text='<%# Bind("urlAnh") %>' />
+                            <br />
+                            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                        </InsertItemTemplate>
+                        <ItemTemplate>
+                            <table style="width: 100%">
+                                <tr>
+                                    <td rowspan="4">
+                                        <asp:Image ID="Image1" runat="server" Height="150px" ImageUrl='<%# Eval("urlAnh", "~/images/{0}") %>' Width="150px" />
+                                    </td>
+                                    <td>
+                                        <b style="font-family: Tahoma">
+                                            <asp:Label ID="TenTPLabel" runat="server" ForeColor="#009900" Text='<%# Bind("TenTP") %>' /></b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 17px">Giá:
+                                   
+                                    <asp:Label ID="DongiaLabel" runat="server" ForeColor="#CC0000" Text='<%# Bind("Dongia","{0:0,0 vnđ}") %>' />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="MotaLabel" runat="server" Text='<%# Bind("Mota") %>' />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+
+                        </ItemTemplate>
+                    </asp:FormView>
+
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BTLASPConnectionString %>" SelectCommand="SELECT [TenTP], [Dongia], [Mota], [Soluongco], [urlAnh] FROM [tblThucpham] WHERE ([MaTP] = @MaTP)">
+                        <SelectParameters>
+                            <asp:QueryStringParameter Name="MaTP" QueryStringField="MaTP" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 165px">Số lượng mua</td>
+                    <td>
+                        <asp:TextBox ID="txtSoluongmua" runat="server" Width="177px">1</asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Label ID="lblSoluongmua" runat="server" EnableTheming="True" ForeColor="Red" Text="Bạn chưa chọn số lượng mua" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <asp:SqlDataSource ID="sqlThongtin" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" SelectCommand="SELECT * FROM [tblThucpham] WHERE ([MaTP] = @MaTP)">
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 165px">
+                <asp:LinkButton ID="lnkbtnThemgiohang" runat="server" OnClick="lnkbtnThemgiohang_Click">Thêm Giỏ Hàng</asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                <asp:LinkButton ID="lnkbtnGiohang" runat="server" PostBackUrl="~/Giohang.aspx">Giỏ Hàng</asp:LinkButton>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <%--<asp:SqlDataSource ID="sqlThongtin" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" SelectCommand="SELECT * FROM [tblThucpham] WHERE ([MaTP] = @MaTP)">
                     <SelectParameters>
                         <asp:QueryStringParameter Name="MaTP" QueryStringField="MaTP" Type="Int32" />
                     </SelectParameters>
-                </asp:SqlDataSource>
-                <br />
+                </asp:SqlDataSource>--%>
+            <br />
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
         </tr>
         <tr>
             <td>
-                <asp:LinkButton ID="lnkbtnThemgiohang" runat="server" OnClick="lnkbtnThemgiohang_Click">Thêm Giỏ Hàng</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:LinkButton ID="lnkbtnGiohang" runat="server" PostBackUrl="~/Giohang.aspx">Giỏ Hàng</asp:LinkButton>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </td>
-        </tr>
-        <tr>
-            <td><br /><br />
+                <br />
+                <br />
                 <asp:Label ID="lblSession" runat="server"></asp:Label>
                 <br />
-                <asp:Label ID="lblTest" runat="server"><br /><br />
-                Cám ơn quý khách !</asp:Label>
                 <br />
                 <asp:SqlDataSource ID="sqlGetDataTP" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" SelectCommand="SELECT * FROM [tblThucpham]"></asp:SqlDataSource>
             </td>

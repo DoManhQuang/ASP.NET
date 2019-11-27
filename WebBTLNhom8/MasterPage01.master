@@ -117,7 +117,7 @@
                                                                                 <table style="width: 100%">
                                                                                     <tr>
                                                                                         <td>
-                                                                                            <a style="text-align: left; font-family: Tahoma" href="Danhsachthucphamtheoloai.aspx?ID=<%# Eval("Maloai") %>"><%# Eval("TenLoai") %></a><hr />
+                                                                                            <a style="text-align: left; font-family: Tahoma" href="Danhsachthucphamtheoloai.aspx?Maloai=<%# Eval("Maloai") %>"><%# Eval("TenLoai") %></a><hr />
                                                                                         </td>
                                                                                     </tr>
                                                                                 </table>
