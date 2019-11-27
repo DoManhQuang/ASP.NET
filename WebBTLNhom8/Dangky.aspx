@@ -127,9 +127,7 @@
                 <br />
             </td>
             <td style="height: 32px">
-                <asp:Button ID="Button4" runat="server" PostBackUrl="~/Trangchu.aspx" 
-                    Text="Trở về trang chủ" CausesValidation="False" />
-                </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td style="width: 164px; height: 32px;">
