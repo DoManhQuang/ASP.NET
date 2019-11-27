@@ -67,4 +67,9 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
             Response.Redirect("Trangchu.aspx");
         }
     }
+
+    protected void lnkbtnTaikhoan_Click(object sender, EventArgs e)
+    {
+
+    }
 }

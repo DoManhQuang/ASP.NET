@@ -90,7 +90,7 @@
 &nbsp;<asp:LinkButton ID="lnkbtnDangky" runat="server" PostBackUrl="~/Dangky.aspx">Đăng ký</asp:LinkButton>
                                         </div>
                                         <div class="content right" style="float: right;">
-                                            <a style="float:right">&nbsp;<asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtindangnhap.aspx">Name</asp:LinkButton>
+                                            <a style="float:right">&nbsp;<asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtintaikhoan.aspx" OnClick="lnkbtnTaikhoan_Click">Name</asp:LinkButton>
                                             </a>
                                         </div>
                                     </div>
