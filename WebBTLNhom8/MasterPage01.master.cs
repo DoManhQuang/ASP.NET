@@ -25,12 +25,28 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
         if(Session["users"] != null)
         {
             lnkbtnDonhang.Visible = true;
+            Quang_Khachhang user = (Quang_Khachhang)Session["users"];
+            lnkbtnTaikhoan.Text = user.getTenKH();
+            lnkbtnTaikhoan.Visible = true;
+            lnkbtnDangnhap.Visible = false;
+            lnkbtnDangky.Visible = false;
+            lnkbtnDangnhap.Enabled = false;
+            lnkbtnDangky.Enabled = false;
+            lnkbtnLogout.Enabled = true;
+            lnkbtnLogout.Text = "Logout";
         }
         if (Session["users"] == null)
         {
-            Quang_Khachhang khachhangtest = new Quang_Khachhang("1", "Quang", "123456", "quangdm@ghtk.vn");
-            Session["users"] = khachhangtest;
-            lnkbtnDonhang.Visible = true;
+            //Quang_Khachhang khachhangtest = new Quang_Khachhang("1", "Quang", "123456", "quangdm@ghtk.vn");
+            //Session["users"] = khachhangtest;
+            //lnkbtnDonhang.Visible = true;
+            lnkbtnDangnhap.Enabled = true;
+            lnkbtnDangky.Enabled = true;
+            lnkbtnTaikhoan.Visible = false;
+            lnkbtnDangnhap.Visible = true;
+            lnkbtnDangky.Visible = true;
+            lnkbtnLogout.Enabled = false;
+            lnkbtnLogout.Text = "|";
         }
     }
 
@@ -40,6 +56,15 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
         {
             Quang_Khachhang khachhang = (Quang_Khachhang)Session["users"];
             Response.Redirect("users_Donhang.aspx?MaTK=" + khachhang.getMaKH());
+        }
+    }
+
+    protected void lnkbtnLogout_Click(object sender, EventArgs e)
+    {
+        if (Session["users"] != null)
+        {
+            Session.Contents.Remove("users");
+            Response.Redirect("Trangchu.aspx");
         }
     }
 }

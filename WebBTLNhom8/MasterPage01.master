@@ -50,11 +50,15 @@
                                     <div class="header_support">
                                         <div>Tel: <strong>(024) 3206 6868</strong></div>
                                         <div>Email: sieuthi@youmart.vn</div>
-                                        <div>Yahoo: <a href="ymsgr:sendim?sieuthiyoumart&amp;m=Hoi+ve+san+pham">
-                                            <img border="0" src="http://opi.yahoo.com/online?u=sieuthiyoumart&amp;m=g&amp;t=1&amp;l=us" align="absmiddle" alt=""></a></div>
+                                        <div>
+                                            Yahoo: <a href="ymsgr:sendim?sieuthiyoumart&amp;m=Hoi+ve+san+pham">
+                                                <img border="0" src="http://opi.yahoo.com/online?u=sieuthiyoumart&amp;m=g&amp;t=1&amp;l=us" align="absmiddle" alt=""></a>
+                                        </div>
                                     </div>
-                                    <div class="header_cart"><a href="Giohang.aspx" title="Giỏ hàng">Giỏ hàng</a> (<asp:Label ID="lblSoluongmua" runat="server" Text="0"></asp:Label>
-&nbsp;sản phẩm )</div>
+                                    <div class="header_cart">
+                                        <a href="Giohang.aspx" title="Giỏ hàng">Giỏ hàng</a> (<asp:Label ID="lblSoluongmua" runat="server" Text="0"></asp:Label>
+                                        &nbsp;sản phẩm )
+                                    </div>
                                 </div>
                                 <div class="both"></div>
                                 <div id="menu">
@@ -81,10 +85,14 @@
                                 <div class="slide_news">
                                     <div class="slide_news_l">
                                         <div class="date left">
-                                            <a href="Dangnhap.aspx"><b>Đăng nhập</b></a> | <a href="Dangky.aspx"><b>Đăng ký</b></a>
+                                            <%--                                            <a href="Dangnhap.aspx"><b>Đăng nhập</b></a> | <a href="Dangky.aspx"><b>Đăng ký</b></a>--%><asp:LinkButton ID="lnkbtnDangnhap" runat="server" PostBackUrl="~/Dangnhap.aspx">Đăng nhập</asp:LinkButton>
+                                            &nbsp;<asp:LinkButton ID="lnkbtnLogout" runat="server" OnClick="lnkbtnLogout_Click">|</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="lnkbtnDangky" runat="server" PostBackUrl="~/Dangky.aspx">Đăng ký</asp:LinkButton>
                                         </div>
-                                        <div class="content right">
-                                            &nbsp;</div>
+                                        <div class="content right" style="float: right;">
+                                            <a style="float:right">&nbsp;<asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtindangnhap.aspx">Name</asp:LinkButton>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="space"></div>
@@ -196,9 +204,6 @@
                                                         <h3>&nbsp;</h3>
                                                         <div class="content">
                                                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
-
-
                                                             </asp:ContentPlaceHolder>
                                                         </div>
                                                         <div class="spacer"></div>

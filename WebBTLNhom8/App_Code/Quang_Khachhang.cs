@@ -17,7 +17,7 @@ public class Quang_Khachhang
 
     }
 
-    public Quang_Khachhang(string maKH, string tenKH, string sdt, string email)
+    public Quang_Khachhang(String maKH, String tenKH, String sdt, String email)
     {
         MaKH = maKH;
         TenKH = tenKH;
