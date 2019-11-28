@@ -43,13 +43,12 @@ public class ListDataTables
                     new DataColumn("Path", typeof(string)),
                     new DataColumn("Dongia",typeof(string)),
                     new DataColumn("Soluongmua",typeof(string)),
-                    new DataColumn("Thanhtien",typeof(string)),
-                    new DataColumn("ckbMua",typeof(bool))
+                    new DataColumn("Thanhtien",typeof(string))
         });
         foreach (var item in cart.getDSThucPham())
         {
             int thanhTien = int.Parse(item.getGiatien()) * item.getSoluongmua();
-            dt.Rows.Add(item.getMaTP(), item.getTenTP(), item.getPathPhoto(), item.getGiatien(), item.getSoluongmua(), thanhTien, item.getCKBMua());
+            dt.Rows.Add(item.getMaTP(), item.getTenTP(), item.getPathPhoto(), item.getGiatien(), item.getSoluongmua(), thanhTien);
         }
         return dt;
     }

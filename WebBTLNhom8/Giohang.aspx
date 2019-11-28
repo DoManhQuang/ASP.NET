@@ -111,8 +111,6 @@
 
                         <ItemTemplate>
                             <div style="margin: 20px auto">
-                                <asp:CheckBox RowIndex="<%# Container.DisplayIndex %>" CommandArgument="<%# Container.DataItemIndex %>" ID="ckbMua" runat="server" Checked='<%# Bind("ckbMua") %>' OnCheckedChanged="ckbMua_CheckedChanged" />
-                                <br />
                                 <asp:LinkButton RowIndex="<%# Container.DisplayIndex %>" CommandArgument="<%# Container.DataItemIndex %>" ID="lnkbtnXoa" runat="server" OnClick="lnkbtnXoa_Click">Xóa</asp:LinkButton>
                             </div>
                         </ItemTemplate>

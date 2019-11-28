@@ -11,7 +11,7 @@ public class ShoppingCart
     private List<InfoThucPham> thucPhams = null;
     public ShoppingCart()
     {
-        if(this.thucPhams == null)
+        if (this.thucPhams == null)
         {
             thucPhams = new List<InfoThucPham>();
         }
@@ -29,7 +29,7 @@ public class ShoppingCart
 
     public int getLengthDS()
     {
-        if(thucPhams == null)
+        if (thucPhams == null)
         {
             return 0;
         }
@@ -41,10 +41,7 @@ public class ShoppingCart
         int tongtien = 0;
         foreach (var item in thucPhams)
         {
-            if (item.getCKBMua())
-            {
-                tongtien += (int.Parse(item.getGiatien()) * item.getSoluongmua());
-            }
+            tongtien += (int.Parse(item.getGiatien()) * item.getSoluongmua());
         }
         return tongtien;
     }

@@ -60,14 +60,14 @@ public partial class Chitietthucpham : System.Web.UI.Page
                     }
                     if (!flag)
                     {
-                        lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua, geturlAnh, true));
+                        lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua, geturlAnh));
                         Session["cart"] = lstThucpham;
                     }
                 }
                 else
                 {
                     List<InfoThucPham> lstThucpham = new List<InfoThucPham>();
-                    lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua, geturlAnh, true));
+                    lstThucpham.Add(new InfoThucPham(MaTP, TenTP, giatien, Soluongmua, geturlAnh));
                     Session["cart"] = lstThucpham;
                 }
                 Response.Redirect("Chitietthucpham.aspx?MaTP=" + MaTP);
