@@ -56,6 +56,7 @@ public partial class Giohang : System.Web.UI.Page
         {
             if (Session["users"] != null)
             {
+
                 Response.Redirect("web_datmua.aspx");
             }
             Response.Redirect("Dangnhap.aspx");
@@ -142,7 +143,7 @@ public partial class Giohang : System.Web.UI.Page
 
     protected void ckbMua_CheckedChanged(object sender, EventArgs e)
     {
-        
+
         //CheckBox ckbMua = sender as CheckBox;
         //if (!ckbMua.Checked)
         //{
@@ -164,5 +165,36 @@ public partial class Giohang : System.Web.UI.Page
         //        Response.Redirect("Giohang.aspx");
         //    }
         //}
+    }
+
+    protected void lnkbtnXoa_Click(object sender, EventArgs e)
+    {
+        LinkButton lnkbtnXoa = sender as LinkButton;
+        int rowIndex = Convert.ToInt32(lnkbtnXoa.Attributes["RowIndex"]);
+        //lblCapnhap.Text = "index down: " + rowIndex;
+        Label gvlblSoluongmua = null;
+        Label gvlblMaTP = null;
+        if (gvGiohang.Rows != null)
+        {
+            List<InfoThucPham> lstThucpham = (List<InfoThucPham>)Session["cart"];
+            ShoppingCart cart = new ShoppingCart(lstThucpham);
+            gvlblMaTP = (Label)gvGiohang.Rows[rowIndex].FindControl("lblMaTP");
+            gvlblSoluongmua = (Label)gvGiohang.Rows[rowIndex].FindControl("lblSoluongmua");
+            if (int.Parse(gvlblSoluongmua.Text.Trim()) != 0)
+            {
+                foreach (var item in cart.getDSThucPham())
+                {
+                    if (gvlblMaTP.Text.Trim().Equals(item.getMaTP()))
+                    {
+                        int soluongmuamoi = 0;
+                        //gvGiohang.Rows[rowIndex] = soluongmuamoi
+                        item.setSoluongmua(soluongmuamoi);
+                    }
+                }
+            }
+            Session["cart"] = cart.getDSThucPham();
+            //lblCapnhap.Text = txtCapnhapSLM.Text;
+            Response.Redirect("Giohang.aspx");
+        }
     }
 }
