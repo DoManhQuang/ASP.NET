@@ -53,8 +53,6 @@ public partial class Dangnhap : System.Web.UI.Page
         {
             lblthongbao.Text = "Check your password and username again";
         }
-
-
     }
     protected void TextBox1_TextChanged(object sender, EventArgs e)
     {

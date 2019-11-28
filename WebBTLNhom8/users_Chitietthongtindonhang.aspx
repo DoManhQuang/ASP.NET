@@ -120,7 +120,7 @@
                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("urlAnh", "~/{0}") %>' />
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("urlAnh", "~/images/{0}") %>' />
                     </ItemTemplate>
                     <ControlStyle Height="70px" Width="100px" />
                     <ItemStyle Height="50px" Width="100px" />

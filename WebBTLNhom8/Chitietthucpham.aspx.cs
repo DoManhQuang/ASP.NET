@@ -42,7 +42,8 @@ public partial class Chitietthucpham : System.Web.UI.Page
             //String getTenTP = dv.Table.Rows[0]["TenTP"].ToString().Trim();
             //String getDongia = dv.Table.Rows[0]["Dongia"].ToString().Trim();
             String geturlAnh = dv.Table.Rows[0]["urlAnh"].ToString().Trim();
-
+            geturlAnh = "./images/" + geturlAnh;
+                
             if (Soluongmua != 0)
             {
                 if (Session["cart"] != null)

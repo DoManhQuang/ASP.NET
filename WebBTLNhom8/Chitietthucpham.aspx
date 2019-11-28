@@ -107,7 +107,7 @@
             </tr>--%>
             <tr>
                 <td style="height: 177px">
-                    <asp:FormView ID="fvThongtin" runat="server" DataSourceID="SqlDataSource1">
+                    <asp:FormView ID="fvThongtin" runat="server" DataSourceID="SqlDataSource1" Width="100%">
                         <EditItemTemplate>
                             TenTP:
                        
@@ -157,9 +157,9 @@
                             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                         </InsertItemTemplate>
                         <ItemTemplate>
-                            <table style="width: 100%">
+                            <table style="width: 66%; height: 162px;">
                                 <tr>
-                                    <td rowspan="4">
+                                    <td rowspan="4" style="padding-right: 30px;">
                                         <asp:Image ID="Image1" runat="server" Height="150px" ImageUrl='<%# Eval("urlAnh", "~/images/{0}") %>' Width="150px" />
                                     </td>
                                     <td>
