@@ -72,4 +72,9 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void lnkbtnDangnhap_Click(object sender, EventArgs e)
+    {
+
+    }
 }

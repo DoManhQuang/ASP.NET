@@ -86,7 +86,7 @@
                                 <div class="slide_news">
                                     <div class="slide_news_l">
                                         <div class="date left">
-                                            <%--                                            <a href="Dangnhap.aspx"><b>Đăng nhập</b></a> | <a href="Dangky.aspx"><b>Đăng ký</b></a>--%><asp:LinkButton ID="lnkbtnDangnhap" runat="server" PostBackUrl="~/Dangnhap.aspx">Đăng nhập</asp:LinkButton>
+                                            <%--                                            <a href="Dangnhap.aspx"><b>Đăng nhập</b></a> | <a href="Dangky.aspx"><b>Đăng ký</b></a>--%><asp:LinkButton ID="lnkbtnDangnhap" runat="server" PostBackUrl="~/Dangnhap.aspx" OnClick="lnkbtnDangnhap_Click">Đăng nhập</asp:LinkButton>
                                             &nbsp;<asp:LinkButton ID="lnkbtnLogout" runat="server" OnClick="lnkbtnLogout_Click">|</asp:LinkButton>
                                             &nbsp;<asp:LinkButton ID="lnkbtnDangky" runat="server" PostBackUrl="~/Dangky.aspx">Đăng ký</asp:LinkButton>
                                         </div>

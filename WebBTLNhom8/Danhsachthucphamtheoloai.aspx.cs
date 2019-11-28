@@ -9,7 +9,11 @@ public partial class Danhsachthucphamtheoloai : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        string web = "Danhsachthucphamtheoloai.aspx";
+        string maloai = Request.QueryString["Maloai"];
+        web = web + "?Maloai=" + maloai;
+        NextPage nextPage = new NextPage(web);
+        Session["nextpage"] = nextPage;
     }
 
     //protected void LinkButton1_Click(object sender, EventArgs e)

@@ -25,18 +25,9 @@ public partial class Giohang : System.Web.UI.Page
             lblTongtien.Text = "0.000 VND";
         }
 
-        if (!Page.IsPostBack)
-        {
-            //DataTable dt = new DataTable();
-            //dt.Columns.AddRange(new DataColumn[3] { new DataColumn("ItemId", typeof(int)),
-            //        new DataColumn("ItemName", typeof(string)),
-            //        new DataColumn("ItemQuantity",typeof(string)) });
-            //dt.Rows.Add(1, "Flour", "500 Kg");
-            //dt.Rows.Add(2, "Tea", "20 Kg");
-            //dt.Rows.Add(3, "Rice", "1000 Kg");
-            //gvGiohang.DataSource = dt;
-            //gvGiohang.DataBind();
-        }
+        string web = "Giohang.aspx";
+        NextPage nextPage = new NextPage(web);
+        Session["nextpage"] = nextPage;
     }
 
     protected void btnXoagiohang_Click(object sender, EventArgs e)
@@ -50,15 +41,14 @@ public partial class Giohang : System.Web.UI.Page
 
     protected void btnDatmua_Click(object sender, EventArgs e)
     {
-        //Quang_Khachhang khachhangtest = new Quang_Khachhang("1", "Quang", "123456", "quangdm@ghtk.vn");
-        //Session["users"] = khachhangtest;
         if (Session["cart"] != null)
         {
             if (Session["users"] != null)
             {
-
                 Response.Redirect("web_datmua.aspx");
             }
+            NextPage next = new NextPage("web_datmua.aspx");
+            Session["nextpage"] = next;
             Response.Redirect("Dangnhap.aspx");
         }
         else
@@ -139,11 +129,6 @@ public partial class Giohang : System.Web.UI.Page
             gvlblMaTP = (Label)gvGiohang.Rows[rowIndex].FindControl("lblMaTP");
             Response.Redirect("Chitietthucpham.aspx?MaTP=" + gvlblMaTP.Text.Trim());
         }
-    }
-
-    protected void ckbMua_CheckedChanged(object sender, EventArgs e)
-    {
-
     }
 
     protected void lnkbtnXoa_Click(object sender, EventArgs e)

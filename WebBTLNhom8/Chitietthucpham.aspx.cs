@@ -11,15 +11,11 @@ public partial class Chitietthucpham : System.Web.UI.Page
     public static String MaTP;
     protected void Page_Load(object sender, EventArgs e)
     {
-        List<InfoThucPham> lstThucpham = (List<InfoThucPham>)Session["cart"];
-        //if (lstThucpham != null)
-        //{
-        //    foreach (var item in lstThucpham)
-        //    {
-        //        //lblSession.Text += "" + item.getMaTP() + "  " + item.getSoluongmua().ToString() + "  " + item.getTenTP() + "  " + item.getGiatien() +
-        //        //    "<br/> <br/>";
-        //    }
-        //}
+        string web = "Chitietthucpham.aspx";
+        string matp = Request.QueryString["MaTP"];
+        web = web + "?MaTP=" + matp;
+        NextPage nextPage = new NextPage(web);
+        Session["nextpage"] = nextPage;
     }
     protected void lnkbtnThemgiohang_Click(object sender, EventArgs e)
     {
