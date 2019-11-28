@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class MasterPage01 : System.Web.UI.MasterPage
 {
+
     protected void Page_Load(object sender, EventArgs e)
     {
         lnkbtnDonhang.Visible = false;
@@ -64,6 +65,9 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
         if (Session["users"] != null)
         {
             Session.Contents.Remove("users");
+            //Response.ExpiresAbsolute = DateTime.Now.AddDays(-1d);
+            //Response.Expires = -1500;
+            //Response.CacheControl = "no-cache";
             Response.Redirect("Trangchu.aspx");
         }
     }

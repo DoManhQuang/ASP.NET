@@ -66,9 +66,9 @@
                                     <ul class="menu">
                                         <li class="active"><a href="Trangchu.aspx" title="Trang chủ">Trang chủ</a></li>
                                         <li class=""><a href="#" title="Giới thiệu">Giới thiệu</a></li>
-                                        <li class=""><a href="#" title="Tin tức">Tin tức</a></li>
+                                        <!--li class=""><a href="#" title="Tin tức">Tin tức</a></!--li>
                                         <li class=""><a href="#" title="Khuyến mại">Khuyến mại</a></li>
-                                        <li class=""><a href="#" title="Tư vấn thực đơn">Tư vấn thực đơn</a></li>
+                                        <li class=""><a href="#" title="Tư vấn thực đơn">Tư vấn thực đơn</a></li-->
                                         <li class=""><a href="#" title="Liên hệ">Liên hệ</a></li>
                                         <li class="last ">
                                             <asp:LinkButton ID="lnkbtnDonhang" runat="server" OnClick="lnkbtnDonhang_Click" Visible="False">Đơn hàng</asp:LinkButton>
