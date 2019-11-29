@@ -4,7 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
+    <style type="text/css">
+        .hung{
+            text-align:right;
+            margin-right:100px;
+        }
+    </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>youmart.com.vn - Siêu thị thực phẩm trực tuyến hàng đầu Việt nam </title>
     <meta name="description" http-equiv="description" content="youmart.com.vn là Siêu thị thực phẩm trực tuyến hàng đầu Việt nam. Tại đây bạn có thể dễ dàng đặt mua các loại thực phẩm tươi sống và được vận chuyển tận nhà nhanh chóng.">
@@ -109,7 +114,7 @@
                                                         <div class="content">
                                                             <table class="auto-style1">
                                                                 <tr style="padding-bottom: 10px">
-                                                                    <td style="background-color: green; height: 30px; font-size: 10pt; line-height: 30px; color: white; text-align: center; font-family: Tahoma"><b>DANH MỤC SẢN PHẨM</b></td>
+                                                                    <td style="background-color: green; height: 30px; font-size: 9pt; line-height: 30px; color: white; text-align: center; font-family: Tahoma, Helvetica, sans-serif"><b>DANH MỤC SẢN PHẨM</b></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>

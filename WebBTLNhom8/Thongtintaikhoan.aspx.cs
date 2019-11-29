@@ -18,10 +18,25 @@ public partial class Thongtintaikhoan : System.Web.UI.Page
             txtNgaysinh.Text = objUser.Ngaysinh;
             txtten.Text = objUser.Hoten;
             txtsodienthoai.Text = objUser.Sodienthoai;
+          
             if (Session["User"] != null)
             {
                 Session.Contents.Remove("User");
             }
+
         }
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Class1 objUser = new Class1();
+        objUser.Hoten = txtten.Text;
+        objUser.Ngaysinh = txtNgaysinh.Text;
+        objUser.Sodienthoai = txtsodienthoai.Text;
+        objUser.Diachi = txtdiachi.Text;
+        objUser.email = txtemail.Text;
+        //objUser.Matkhau = txtmatkhau.Text;
+        Session.Add("User", objUser);
+        Response.Redirect("Suathongtintaikhoan.aspx");
     }
 }

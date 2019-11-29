@@ -67,11 +67,14 @@ public partial class Dangnhap : System.Web.UI.Page
         Connect(txttendn.Text, txtmatkhau.Text);
         if (login == true)
         {
+
             if(Session["nextpage"] != null)
             {
                 NextPage nextPage = (NextPage)Session["nextpage"];
                 Response.Redirect(nextPage.getNextWeb());
             }
+            Session.Add("userName", txttendn.Text);
+            Session.Add("userPass", txtmatkhau.Text);
             Response.Redirect("Trangchu.aspx");
         }
         else

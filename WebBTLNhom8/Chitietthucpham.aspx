@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage01.master" AutoEventWireup="true" CodeFile="Chitietthucpham.aspx.cs" Inherits="Chitietthucpham" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h3>Trang chi tiết thực phẩm</h3>
-    <p>&nbsp;</p>
     <table style="width: 100%">
         <%--<tr>
             <td style="height: 333px">
@@ -160,27 +158,26 @@
                             <table style="width: 66%; height: 162px;">
                                 <tr>
                                     <td rowspan="4" style="padding-right: 30px;">
-                                        <asp:Image ID="Image1" runat="server" Height="150px" ImageUrl='<%# Eval("urlAnh", "~/images/{0}") %>' Width="150px" />
+                                        <asp:Image ID="Image1" runat="server" Height="250px" ImageUrl='<%# Eval("urlAnh", "~/images/{0}") %>' Width="250px" />
                                     </td>
-                                    <td>
+                                    <td style="text-align: left; height: 43px">
                                         <b style="font-family: Tahoma">
-                                            <asp:Label ID="TenTPLabel" runat="server" ForeColor="#009900" Text='<%# Bind("TenTP") %>' /></b>
+                                            <asp:Label ID="TenTPLabel" runat="server" ForeColor="#009900" Text='<%# Bind("TenTP") %>' style="font-size: larger; color: #336600;"/></b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 17px">Giá:
-                                   
-                                    <asp:Label ID="DongiaLabel" runat="server" ForeColor="#CC0000" Text='<%# Bind("Dongia","{0:0,0 vnđ}") %>' />
+                                    <td style="height: 53px"><span style="font-size: larger; font-family:Tahoma;"><span style="color: #CC0000"><strong>Giá:</strong></span> </span><strong>
+                                        <asp:Label ID="DongiaLabel" runat="server" ForeColor="#CC0000" style="font-size: larger" Text='<%# Bind("Dongia","{0:0,0 vnđ}") %>' />
+                                        <br />
+                                        </strong>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <asp:Label ID="MotaLabel" runat="server" Text='<%# Bind("Mota") %>' />
+                                    <td style="font-family: Tahoma;">
+                                        <asp:Label ID="MotaLabel" runat="server" Text='<%# Bind("Mota") %>' Width="300px" />
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
+                                
                             </table>
                             <br />
                             <br />

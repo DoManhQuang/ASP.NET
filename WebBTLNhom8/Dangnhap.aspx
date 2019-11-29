@@ -18,7 +18,7 @@
                 <asp:Label ID="Label2" runat="server" Text="Mật khẩu"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtmatkhau" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtmatkhau" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="txtmatkhau" ErrorMessage="Không được để trống" 
                     ForeColor="Red"></asp:RequiredFieldValidator>
