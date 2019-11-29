@@ -81,7 +81,7 @@
             </table>
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Cập nhật" Text="Update" OnClick="UpdateButton_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Hủy bỏ" Text="Cancel" />
+            <asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Hủy bỏ" Text="Cancel" OnClick="UpdateCancelButton_Click" />
             <br />
         </EditItemTemplate>
         <EditRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />

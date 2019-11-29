@@ -74,4 +74,12 @@ public partial class Admin_Chitietthucpham : System.Web.UI.Page
             Response.Redirect("Admin_Chitietthucpham.aspx?MaTP=" + matp);
         }
     }
+
+    protected void UpdateCancelButton_Click(object sender, EventArgs e)
+    {
+        Page_Load(sender, e);
+        Label lblmatp = (Label)FormView1.FindControl("MaTPLabel1");
+        string matp = lblmatp.Text;
+        Response.Redirect("Admin_Chitietthucpham.aspx?MaTP=" + matp);
+    }
 }
