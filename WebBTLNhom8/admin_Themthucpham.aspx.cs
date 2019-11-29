@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -7,30 +8,17 @@ using System.Web.UI.WebControls;
 
 public partial class Themthucpham : System.Web.UI.Page
 {
+    public string imgName;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(Session["imgName"] != null)
+        {
+            imgName = (string)Session["imgName"];
+        }
     }
 
     protected void btnThem_Click(object sender, EventArgs e)
     {
-        int sizeLimit = 5242880;
-        if (HinhAnh.HasFile)
-        {
-            if (HinhAnh.PostedFile.ContentLength <= sizeLimit)
-            {
-                string path = "E:\\BTL_ASPWEB\\WebBTLNhom8\\images\\" + HinhAnh.FileName;
-                HinhAnh.SaveAs(path);
-
-            }
-        }
-
-        SqlDataSource1.InsertParameters["TenTP"].DefaultValue = txtten.Text;
-        SqlDataSource1.InsertParameters["Dongia"].DefaultValue = txtgia.Text;
-        SqlDataSource1.InsertParameters["Soluongco"].DefaultValue = txtslc.Text;
-        SqlDataSource1.InsertParameters["Mota"].DefaultValue = txtmota.Text;
-        SqlDataSource1.InsertParameters["urlAnh"].DefaultValue = HinhAnh.FileName;
-        SqlDataSource1.InsertParameters["Maloai"].DefaultValue = DropDownList1.SelectedValue;
         if (txtten.Text == "")
         {
             lblten.Text = "Không được bỏ trống .";
@@ -44,22 +32,22 @@ public partial class Themthucpham : System.Web.UI.Page
         {
             lblthongbao.Text = "Số lượng xe  phải lớn hơn hoặc bằng không và đơn giá lớn hơn không ";
         }
-        else if (HinhAnh.FileName == "")
+        else if (imgName == null)
         {
-            lblhinhanh.Text = "Hãy chọn file ảnh.";
+            LabelPath.Text = "Hãy chọn file ảnh.";
         }
         else
         {
             try
             {
-                SqlDataSource1.Insert();
-                txtten.Text = "";
-                txtslc.Text = "";
-                txtmota.Text = "";
-
-                txtgia.Text = "";
-                //txtmahang.Text = "";
-                Response.Redirect("Danhsachthucpham.aspx");
+                sqlThemTP.InsertParameters["Maloai"].DefaultValue = DropDownList1.SelectedValue;
+                sqlThemTP.InsertParameters["TenTP"].DefaultValue = txtten.Text.Trim();
+                sqlThemTP.InsertParameters["Dongia"].DefaultValue = txtgia.Text.Trim();
+                sqlThemTP.InsertParameters["Soluongco"].DefaultValue = txtslc.Text.Trim();
+                sqlThemTP.InsertParameters["Mota"].DefaultValue = txtmota.Text.Trim();
+                sqlThemTP.InsertParameters["urlAnh"].DefaultValue = imgName;
+                sqlThemTP.Insert();
+                Response.Redirect("admin_Danhsachthucpham.aspx");
             }
             catch (Exception ex)
             {
@@ -71,5 +59,27 @@ public partial class Themthucpham : System.Web.UI.Page
     protected void btnHuy_Click(object sender, EventArgs e)
     {
         Response.Redirect("admin_Themthucpham.aspx");
+    }
+
+    protected void btnUpload_Click(object sender, EventArgs e)
+    {
+        if (FileUploadImage.HasFile)
+        {
+            if (FileUploadImage.HasFile)
+            {
+                try
+                {
+                    string filename = Path.GetFileName(FileUploadImage.FileName);
+                    Session["imgName"] = filename;
+                    FileUploadImage.SaveAs(Server.MapPath("~/") + filename);
+                    ImageUpload.ImageUrl = "~/images/" + filename;
+                    LabelPath.Text = "Upload status: File uploaded!";
+                }
+                catch (Exception ex)
+                {
+                    LabelPath.Text = "Upload status: The file could not be uploaded. The following error occured: ";
+                }
+            }
+        }
     }
 }

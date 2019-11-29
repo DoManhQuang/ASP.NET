@@ -15,9 +15,4 @@ public partial class Danhsachthucphamtheoloai : System.Web.UI.Page
         NextPage nextPage = new NextPage(web);
         Session["nextpage"] = nextPage;
     }
-
-    //protected void LinkButton1_Click(object sender, EventArgs e)
-    //{
-    //    //Response.Redirect("~/Chitietthucpham.aspx?MaTP=1");
-    //}
 }

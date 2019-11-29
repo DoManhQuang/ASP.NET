@@ -9,6 +9,8 @@ public partial class Giohang : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        NextPage next = new NextPage("web_datmua.aspx");
+        Session["nextpage"] = next;
         ShoppingCart cart = null;
         if (Session["cart"] != null)
         {
@@ -47,8 +49,6 @@ public partial class Giohang : System.Web.UI.Page
             {
                 Response.Redirect("web_datmua.aspx");
             }
-            NextPage next = new NextPage("web_datmua.aspx");
-            Session["nextpage"] = next;
             Response.Redirect("Dangnhap.aspx");
         }
         else
