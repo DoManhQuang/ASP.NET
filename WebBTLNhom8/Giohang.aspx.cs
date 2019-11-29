@@ -20,7 +20,7 @@ public partial class Giohang : System.Web.UI.Page
             DataTable dataTable = listData.ShoppingCart(cart);
             gvGiohang.DataSource = dataTable;
             gvGiohang.DataBind();
-            lblTongtien.Text = cart.getTongTien().ToString() + " VND";
+            lblTongtien.Text = string.Format("{0:#,0 VND}", Convert.ToInt32(cart.getTongTien().ToString()));
         }
         else
         {

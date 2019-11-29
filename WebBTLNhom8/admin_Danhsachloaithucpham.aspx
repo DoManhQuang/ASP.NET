@@ -4,13 +4,14 @@
 
     <header class="page-header" style="left: 0px; top: 1px">
         <div class="container-fluid">
-            <h2 class="no-margin-bottom">Quản lý loại thực phẩm</h2>
+            <h2 class="no-margin-bottom" style="text-align: left">Quản lý loại thực phẩm</h2>
 
             <br />
 
         </div>
     </header>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Maloai" DataSourceID="SqlDataSource1" OnRowDeleted="GridView1_RowDeleted" Style="margin-left: 343px; margin-top: 88px" Width="604px" OnRowUpdated="GridView1_RowUpdated">
+    <div style="text-align: center">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Maloai" DataSourceID="SqlDataSource1" OnRowDeleted="GridView1_RowDeleted" Style="margin-left: 179px; margin-top: 88px" Width="910px" OnRowUpdated="GridView1_RowUpdated">
         <Columns>
             <asp:BoundField DataField="Maloai" HeaderText="Mã loại" InsertVisible="False" ReadOnly="True" SortExpression="Maloai" />
             <asp:BoundField DataField="TenLoai" HeaderText="Tên loại" SortExpression="TenLoai" />
@@ -26,6 +27,7 @@
         <SortedDescendingCellStyle BackColor="#F6F0C0" />
         <SortedDescendingHeaderStyle BackColor="#7E0000" />
     </asp:GridView>
+    </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString %>" DeleteCommand="DELETE FROM [tblLoaiTP] WHERE [Maloai] = @Maloai" InsertCommand="INSERT INTO [tblLoaiTP] ([TenLoai]) VALUES (@TenLoai)" SelectCommand="SELECT * FROM [tblLoaiTP]" UpdateCommand="UPDATE [tblLoaiTP] SET [TenLoai] = @TenLoai WHERE [Maloai] = @Maloai">
         <DeleteParameters>
             <asp:Parameter Name="Maloai" Type="Int32" />

@@ -38,7 +38,7 @@
                             <!-- Search-->
                             <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
                             <!-- Notifications-->
-                            <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
+                            <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i></a>
                                 <ul aria-labelledby="notifications" class="dropdown-menu">
                                     <li><a rel="nofollow" href="#" class="dropdown-item">
                                         <div class="notification">
@@ -68,7 +68,7 @@
                                 </ul>
                             </li>
                             <!-- Messages                        -->
-                            <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
+                            <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i></a>
                                 <ul aria-labelledby="notifications" class="dropdown-menu">
                                     <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
                                         <div class="msg-profile"><!--link anh--> </div>
@@ -114,20 +114,20 @@
                     </div>
                 </div>
                 <ul class="list-unstyled">
-                    <li class="active"><a href="admin_Trangchu.aspx"> <i class="icon-home"></i>Trang chủ </a></li>
-                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý loại thực phẩm</a>
+                    <li class="active"><a href="admin_Trangchu.aspx"> <i></i>Trang chủ </a></li>
+                    <li><a href="#exampledropdownDropdown"> <i></i>Quản lý loại thực phẩm</a>
                         <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                             <li><a href="admin_Danhsachloaithucpham.aspx">Danh sách loại thực phẩm </a></li>
                             <li><a href="admin_Themloaithucpham.aspx">Thêm loại thực phẩm </a></li>
                         </ul>
                     </li>
-                    <li><a href="#exampledropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý thực phẩm</a>
+                    <li><a href="#exampledropdown"> <i ></i>Quản lý thực phẩm</a>
                         <ul id="exampledropdown" class="collapse list-unstyled ">
                             <li><a href="admin_Danhsachthucpham.aspx">Danh sách thực phẩm </a></li>
                             <li><a href="admin_Themthucpham.aspx">Thêm thực phẩm </a></li>
                         </ul>
                     </li>
-                    <li><a href="#exampledropdow" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Quản lý đơn hàng</a>
+                    <li><a href="#exampledropdow"> <i ></i>Quản lý đơn hàng</a>
                         <ul id="exampledropdow" class="collapse list-unstyled ">
                             <li><a href="admin_Thongtindonhang.aspx">Thông tin đơn hàng</a></li>
                         </ul>

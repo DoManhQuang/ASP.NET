@@ -82,11 +82,12 @@
                                         </li>
                                     </ul>
                                     <div class="block_search">
-                                        <form method="get" action="http://youmart.vn/">
+                                        <form method="get" action="#">
                                             <input type="hidden" name="option" value="search">
-                                            <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtSearch" runat="server" Width="139px"></asp:TextBox>
                                             <input type="submit" value="" class="submit_search" onclick="submitSearch();">
                                         </form>
+                                            <asp:ImageButton ID="imgbtnTimkiem" runat="server" ImageUrl="~/data/img/search.png" OnClick="imgbtnTimkiem_Click" Width="19px" />
                                     </div>
                                     <div class="clr"></div>
                                 </div>

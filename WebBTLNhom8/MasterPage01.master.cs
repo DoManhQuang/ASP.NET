@@ -81,4 +81,9 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void imgbtnTimkiem_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("Timkiemsanpham.aspx?TenTP=" + txtSearch.Text.Trim());
+    }
 }

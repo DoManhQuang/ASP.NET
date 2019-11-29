@@ -71,7 +71,7 @@ public partial class Admin_Dangnhap : System.Web.UI.Page
         }
         else
         {
-            lblthongbao.Text = "Your account invalid. Please check again.";
+            lblthongbao.Text = "Vui lòng kiểm tra lại tài khoản.";
         }
     }
 }

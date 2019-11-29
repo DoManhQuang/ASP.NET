@@ -4,111 +4,32 @@
     <header class="page-header">
         <div class="container-fluid">
             <h2 class="no-margin-bottom">Quản lý đơn hàng</h2>
-            <p class="no-margin-bottom">&nbsp;</p>
-            <p class="no-margin-bottom">
-                <asp:GridView ID="gvDonhang" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MaDH" DataSourceID="sqlDonhang" Width="100%">
-                    <Columns>
-                        <asp:TemplateField HeaderText="MaDH" InsertVisible="False" SortExpression="MaDH">
-                            <EditItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("MaDH") %>'></asp:Label>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("MaDH") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Diachinhanhang" SortExpression="Diachinhanhang">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Diachinhanhang") %>'></asp:TextBox>
-                                <br />
-                                <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Diachinhanhang") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Yeucaukhac" SortExpression="Yeucaukhac">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Yeucaukhac") %>'></asp:TextBox>
-                                <br />
-                                <asp:Label ID="Label8" runat="server" Text='<%# Bind("Yeucaukhac") %>'></asp:Label>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("Yeucaukhac") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Tongtien" SortExpression="Tongtien">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Tongtien") %>'></asp:TextBox>
-                                <br />
-                                <asp:Label ID="Label9" runat="server" Text='<%# Bind("Tongtien") %>'></asp:Label>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("Tongtien") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Ngaymua" SortExpression="Ngaymua">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Ngaymua") %>'></asp:TextBox>
-                                <br />
-                                <asp:Label ID="Label10" runat="server" Text='<%# Bind("Ngaymua") %>'></asp:Label>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("Ngaymua") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Tinhtrang" SortExpression="Tinhtrang">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Tinhtrang") %>'></asp:TextBox>
-                                <br />
-                                <asp:DropDownList ID="DropDownList1" runat="server" Height="21px" Width="167px">
-                                    <asp:ListItem Value="Chờ xác nhận đơn hàng">Chờ xác nhận đơn hàng</asp:ListItem>
-                                    <asp:ListItem>Đang đi lấy hàng về kho</asp:ListItem>
-                                    <asp:ListItem>Đang vận chuyển</asp:ListItem>
-                                    <asp:ListItem>Đã vận chuyển đến kho</asp:ListItem>
-                                    <asp:ListItem>Sẵn hàng giao hàng</asp:ListItem>
-                                    <asp:ListItem>Giao hàng thành công</asp:ListItem>
-                                </asp:DropDownList>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("Tinhtrang") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:CommandField CancelText="Thoát" EditText="Sửa" HeaderText="Cập nhật" ShowEditButton="True" UpdateText="Sửa" />
-                    </Columns>
-                    <FooterStyle BackColor="White" ForeColor="#000066" />
-                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                    <RowStyle ForeColor="#000066" />
-                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                    <SortedDescendingHeaderStyle BackColor="#00547E" />
-                </asp:GridView>
-            </p>
         </div>
     </header>
-    <asp:SqlDataSource ID="sqlDonhang" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" DeleteCommand="DELETE FROM [tblDonhang] WHERE [MaDH] = @MaDH" InsertCommand="INSERT INTO [tblDonhang] ([Diachinhanhang], [Yeucaukhac], [Tongtien], [Ngaymua], [Tinhtrang]) VALUES (@Diachinhanhang, @Yeucaukhac, @Tongtien, @Ngaymua, @Tinhtrang)" SelectCommand="SELECT [MaDH], [Diachinhanhang], [Yeucaukhac], [Tongtien], [Ngaymua], [Tinhtrang] FROM [tblDonhang]" UpdateCommand="UPDATE [tblDonhang] SET [Diachinhanhang] = @Diachinhanhang, [Yeucaukhac] = @Yeucaukhac, [Tongtien] = @Tongtien, [Ngaymua] = @Ngaymua, [Tinhtrang] = @Tinhtrang WHERE [MaDH] = @MaDH">
-        <DeleteParameters>
-            <asp:Parameter Name="MaDH" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="Diachinhanhang" Type="String" />
-            <asp:Parameter Name="Yeucaukhac" Type="String" />
-            <asp:Parameter Name="Tongtien" Type="String" />
-            <asp:Parameter Name="Ngaymua" Type="DateTime" />
-            <asp:Parameter Name="Tinhtrang" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Diachinhanhang" Type="String" />
-            <asp:Parameter Name="Yeucaukhac" Type="String" />
-            <asp:Parameter Name="Tongtien" Type="String" />
-            <asp:Parameter Name="Ngaymua" Type="DateTime" />
-            <asp:Parameter Name="Tinhtrang" Type="String" />
-            <asp:Parameter Name="MaDH" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
-    <asp:SqlDataSource ID="sqlCapnhaptinhtrang" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" DeleteCommand="DELETE FROM [tblDonhang] WHERE [MaDH] = @MaDH" InsertCommand="INSERT INTO [tblDonhang] ([MaTK], [Diachinhanhang], [Yeucaukhac], [Tongtien], [Ngaymua], [Tinhtrang]) VALUES (@MaTK, @Diachinhanhang, @Yeucaukhac, @Tongtien, @Ngaymua, @Tinhtrang)" SelectCommand="SELECT * FROM [tblDonhang]" UpdateCommand="UPDATE [tblDonhang] SET [MaTK] = @MaTK, [Diachinhanhang] = @Diachinhanhang, [Yeucaukhac] = @Yeucaukhac, [Tongtien] = @Tongtien, [Ngaymua] = @Ngaymua, [Tinhtrang] = @Tinhtrang WHERE [MaDH] = @MaDH">
+    <div style="text-align: center">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="MaDH" DataSourceID="Sqlquanlydonhang" style="margin-left: 67px; margin-top: 43px" Width="90%">
+        <Columns>
+            <asp:BoundField DataField="MaDH" HeaderText="Mã đơn hàng" InsertVisible="False" ReadOnly="True" SortExpression="MaDH" />
+            <asp:BoundField DataField="MaTK" HeaderText="Mã tài khoản" SortExpression="MaTK" />
+            <asp:BoundField DataField="Diachinhanhang" HeaderText="Địa chỉ nhận hàng" SortExpression="Diachinhanhang" />
+            <asp:BoundField DataField="Yeucaukhac" HeaderText="Yêu cầu khác" SortExpression="Yeucaukhac" />
+            <asp:BoundField DataField="Tongtien" HeaderText="Tổng tiền" SortExpression="Tongtien" />
+            <asp:BoundField DataField="Ngaymua" HeaderText="Ngày mua" SortExpression="Ngaymua" />
+            <asp:BoundField DataField="Tinhtrang" HeaderText="Tinh trạng" SortExpression="Tinhtrang" />
+            <asp:HyperLinkField DataNavigateUrlFields="MaDH" DataNavigateUrlFormatString="admin_Chitietdonhangaspx.aspx?MaDH={0}" HeaderText="Thông tin" NavigateUrl="~/admin_Chitietdonhangaspx.aspx" Text="Xem" />
+        </Columns>
+        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+        <RowStyle BackColor="White" ForeColor="#330099" />
+        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+        <SortedAscendingCellStyle BackColor="#FEFCEB" />
+        <SortedAscendingHeaderStyle BackColor="#AF0101" />
+        <SortedDescendingCellStyle BackColor="#F6F0C0" />
+        <SortedDescendingHeaderStyle BackColor="#7E0000" />
+    </asp:GridView>
+    </div>
+    <asp:SqlDataSource ID="Sqlquanlydonhang" runat="server" ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString2 %>" DeleteCommand="DELETE FROM [tblDonhang] WHERE [MaDH] = @MaDH" InsertCommand="INSERT INTO [tblDonhang] ([MaTK], [Diachinhanhang], [Yeucaukhac], [Tongtien], [Ngaymua], [Tinhtrang]) VALUES (@MaTK, @Diachinhanhang, @Yeucaukhac, @Tongtien, @Ngaymua, @Tinhtrang)" SelectCommand="SELECT * FROM [tblDonhang]" UpdateCommand="UPDATE [tblDonhang] SET [MaTK] = @MaTK, [Diachinhanhang] = @Diachinhanhang, [Yeucaukhac] = @Yeucaukhac, [Tongtien] = @Tongtien, [Ngaymua] = @Ngaymua, [Tinhtrang] = @Tinhtrang WHERE [MaDH] = @MaDH">
         <DeleteParameters>
             <asp:Parameter Name="MaDH" Type="Int32" />
         </DeleteParameters>
@@ -131,7 +52,12 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
+    <br />
+    <br />
+    <br />
     <asp:Label ID="lblloi" runat="server"></asp:Label>
+    <br />
+    <br />
     <br />
     <br />
     &nbsp;

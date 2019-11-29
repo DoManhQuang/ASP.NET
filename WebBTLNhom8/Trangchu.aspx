@@ -20,7 +20,7 @@
                                 <span class="pro_detail_offer" style="color: #CC0000"><span style="font-size: larger"><strong>Giá: </strong></span>
                                 </span>
                                 <span class="pro_detail_offer"><span style="font-size: larger"><strong>
-                                <asp:Label ID="DongiaLabel" runat="server" style="color: #CC0000" Text='<%# Eval("Dongia") %>' />
+                                <asp:Label ID="DongiaLabel" runat="server" style="color: #CC0000" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32( Eval("Dongia"))) %>' />
                                 </strong></span></span>
                             </td>
                         </tr>

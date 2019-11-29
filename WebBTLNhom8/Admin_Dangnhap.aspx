@@ -297,29 +297,29 @@ input[type=submit]:active {
                     <p style="margin-left:150px">&nbsp;</p>
                     <p style="margin-left:150px">&nbsp;</p>
                     <p style="margin-left:150px">&nbsp;</p>
-                    <p style="margin-left:150px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADMIN LOGIN</b></p>
+                    <p style="margin-left:150px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADMIN ĐĂNG NHẬP</b></p>
                     <p style="margin-left:150px">&nbsp;</p></td>
             </tr>
             <tr>
                 <td class="style5">
-                   <p style="margin-left:50px"><b> USERNAME</b></p></td>
+                   <p style="margin-left:50px"><b>Email</b></p></td>
                 <td class="style6">
                     <asp:TextBox ID="txttendn" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="style5">
-                    <p style="margin-left:50px"><b>PASSWORD</b></p></td>
+                    <p style="margin-left:50px"><b>Mật khẩu</b></p></td>
                 <td class="style6">
-                    <asp:TextBox ID="txtmatkhau" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtmatkhau" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
         </table>
       
         <br />
-        <asp:Button ID="btndangnhap" runat="server" Text="Login" 
+        <asp:Button ID="btndangnhap" runat="server" Text="Đăng nhập" 
             onclick="btndangnhap_Click" style="margin-left: 683px" Height="39px" 
-            Width="91px" />
+            Width="121px" />
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
