@@ -65,11 +65,13 @@
                                 <div id="menu">
                                     <ul class="menu">
                                         <li class="active"><a href="Trangchu.aspx" title="Trang chủ">Trang chủ</a></li>
-                                        <li class=""><a href="#" title="Giới thiệu">Giới thiệu</a></li>
+                                        <li class=""><a href="gioithieunhom8.aspx" title="Giới thiệu">Giới thiệu</a></li>
                                         <!--li class=""><a href="#" title="Tin tức">Tin tức</a></!--li>
                                         <li class=""><a href="#" title="Khuyến mại">Khuyến mại</a></li>
                                         <li class=""><a href="#" title="Tư vấn thực đơn">Tư vấn thực đơn</a></li-->
                                         <li class=""><a href="#" title="Liên hệ">Liên hệ</a></li>
+                                        <li><a><asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtintaikhoan.aspx" OnClick="lnkbtnTaikhoan_Click">Name</asp:LinkButton>
+                                            </a></li>
                                         <li class="last ">
                                             <asp:LinkButton ID="lnkbtnDonhang" runat="server" OnClick="lnkbtnDonhang_Click" Visible="False">Đơn hàng</asp:LinkButton>
                                         </li>
@@ -77,7 +79,8 @@
                                     <div class="block_search">
                                         <form method="get" action="http://youmart.vn/">
                                             <input type="hidden" name="option" value="search">
-                                            <input type="text" name="keyword" id="mod_search_searchword" class="inputTimkiem" value="search..." onblur="if(this.value==&#39;&#39;) this.value=&#39;search...&#39;;" onfocus="if(this.value==&#39;search...&#39;) this.value=&#39;&#39;;"><input type="submit" value="" class="submit_search" onclick="submitSearch();">
+                                            <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                                            <input type="submit" value="" class="submit_search" onclick="submitSearch();">
                                         </form>
                                     </div>
                                     <div class="clr"></div>
@@ -91,8 +94,7 @@
                                             &nbsp;<asp:LinkButton ID="lnkbtnDangky" runat="server" PostBackUrl="~/Dangky.aspx">Đăng ký</asp:LinkButton>
                                         </div>
                                         <div class="content right" style="float: right;">
-                                            <a style="float: right">&nbsp;<asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtintaikhoan.aspx" OnClick="lnkbtnTaikhoan_Click">Name</asp:LinkButton>
-                                            </a>
+                                            
                                         </div>
                                     </div>
                                 </div>

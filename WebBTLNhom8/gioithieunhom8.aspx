@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h3>Giới thiệu nhóm bài tập lớn 8</h3>
     <p>&nbsp;</p>
-    <table style="width: 80%">
+    <table style="width: 80%; font-size: 15px;">
         <tr>
             <td style="width: 238px">TS. Ngô Thị Bích Thúy</td>
             <td>GVHD</td>

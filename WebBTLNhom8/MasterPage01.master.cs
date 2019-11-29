@@ -34,7 +34,7 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
             lnkbtnDangnhap.Enabled = false;
             lnkbtnDangky.Enabled = false;
             lnkbtnLogout.Enabled = true;
-            lnkbtnLogout.Text = "Logout";
+            lnkbtnLogout.Text = "Đăng xuất";
         }
         if (Session["users"] == null)
         {
