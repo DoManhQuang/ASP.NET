@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 /// <summary>
@@ -47,8 +48,17 @@ public class ListDataTables
         });
         foreach (var item in cart.getDSThucPham())
         {
-            int thanhTien = int.Parse(item.getGiatien()) * item.getSoluongmua();
-            dt.Rows.Add(item.getMaTP(), item.getTenTP(), item.getPathPhoto(), item.getGiatien(), item.getSoluongmua(), thanhTien);
+            string giatien = item.getGiatien();
+            string[] spearator = { ",", " VND" };
+
+            // using the method 
+            string[] strlist = giatien.Split(spearator,
+               StringSplitOptions.RemoveEmptyEntries);
+            giatien = strlist[0] + strlist[1];
+
+            int thanhTien = int.Parse(giatien) * item.getSoluongmua();
+            
+            dt.Rows.Add(item.getMaTP(), item.getTenTP(), item.getPathPhoto(), item.getGiatien(), item.getSoluongmua(), string.Format("{0:#,0 VND}", thanhTien));
         }
         return dt;
     }

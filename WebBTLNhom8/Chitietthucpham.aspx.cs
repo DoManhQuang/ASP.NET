@@ -28,6 +28,13 @@ public partial class Chitietthucpham : System.Web.UI.Page
             lblGiatien = (Label)fvThongtin.Row.FindControl("DongiaLabel");
             string TenTP = lblTenTP.Text;
             string giatien = lblGiatien.Text;
+            //String[] spearator = { ",", " VND" };
+
+            //// using the method 
+            //String[] strlist = giatien.Split(spearator,
+            //   StringSplitOptions.RemoveEmptyEntries);
+
+            //giatien = strlist[0] + strlist[1];
             int Soluongmua = int.Parse(txtSoluongmua.Text.Trim());
 
             // lấy dữ liệu Hàng

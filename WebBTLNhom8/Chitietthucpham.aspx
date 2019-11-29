@@ -167,7 +167,7 @@
                                 </tr>
                                 <tr>
                                     <td style="height: 53px"><span style="font-size: larger; font-family:Tahoma;"><span style="color: #CC0000"><strong>Giá:</strong></span> </span><strong>
-                                        <asp:Label ID="DongiaLabel" runat="server" ForeColor="#CC0000" style="font-size: larger" Text='<%# Bind("Dongia") %>' />
+                                        <asp:Label ID="DongiaLabel" runat="server" ForeColor="#CC0000" style="font-size: larger" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32(Eval("Dongia")))  %>' />
                                         <br />
                                         </strong>
                                     </td>

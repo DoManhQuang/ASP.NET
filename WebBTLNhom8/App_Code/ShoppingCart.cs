@@ -41,7 +41,14 @@ public class ShoppingCart
         int tongtien = 0;
         foreach (var item in thucPhams)
         {
-            tongtien += (int.Parse(item.getGiatien()) * item.getSoluongmua());
+            string giatien = item.getGiatien();
+            string[] spearator = { ",", " VND" };
+
+            // using the method 
+            string[] strlist = giatien.Split(spearator,
+               StringSplitOptions.RemoveEmptyEntries);
+            giatien = strlist[0] + strlist[1];
+            tongtien += (int.Parse(giatien) * item.getSoluongmua());
         }
         return tongtien;
     }

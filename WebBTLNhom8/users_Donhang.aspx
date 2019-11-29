@@ -43,7 +43,7 @@
                     </EditItemTemplate>
                     <ItemTemplate>
                         <div id="div1" style="margin: 30px auto; margin-left:20px;">
-                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("Tongtien") %>'></asp:Label>
+                            <asp:Label ID="Label4" runat="server" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32( Eval("Tongtien"))) %>'></asp:Label>
                         </div>
                     </ItemTemplate>
                     <ControlStyle Height="70px" />

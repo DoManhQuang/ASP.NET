@@ -16,7 +16,7 @@
                 <asp:TextBox ID="YeucaukhacTextBox" runat="server" Text='<%# Bind("Yeucaukhac") %>' />
                 <br />
                 Tongtien:
-                <asp:TextBox ID="TongtienTextBox" runat="server" Text='<%# Bind("Tongtien") %>' />
+                <asp:TextBox ID="TongtienTextBox" runat="server" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32( Eval("Tongtien"))) %>' />
                 <br />
                 Ngaymua:
                 <asp:TextBox ID="NgaymuaTextBox" runat="server" Text='<%# Bind("Ngaymua") %>' />
@@ -35,7 +35,7 @@
                 <asp:TextBox ID="YeucaukhacTextBox" runat="server" Text='<%# Bind("Yeucaukhac") %>' />
                 <br />
                 Tongtien:
-                <asp:TextBox ID="TongtienTextBox" runat="server" Text='<%# Bind("Tongtien") %>' />
+                <asp:TextBox ID="TongtienTextBox" runat="server" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32( Eval("Tongtien"))) %>' />
                 <br />
                 Ngaymua:
                 <asp:TextBox ID="NgaymuaTextBox" runat="server" Text='<%# Bind("Ngaymua") %>' />
@@ -81,7 +81,7 @@
                     <tr>
                         <td>Tổng tiền</td>
                         <td>
-                            <asp:Label ID="TongtienLabel" runat="server" Text='<%# Bind("Tongtien") %>' />
+                            <asp:Label ID="TongtienLabel" runat="server" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32( Eval("Tongtien"))) %>' />
                         </td>
                     </tr>
                 </table>
@@ -142,7 +142,7 @@
                     </EditItemTemplate>
                     <ItemTemplate>
                         <div style="margin: 30px auto; margin-left: 30px;">
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("Dongia") %>'></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32( Eval("Dongia"))) %>'></asp:Label>
                         </div>
                     </ItemTemplate>
                     <ItemStyle Width="100px" />
@@ -153,7 +153,7 @@
                     </EditItemTemplate>
                     <ItemTemplate>
                         <div style="margin: 30px auto; margin-left: 55px;">
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("Thanhtien") %>'></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text='<%# string.Format("{0:#,0 VND}", Convert.ToInt32( Eval("Thanhtien"))) %>'></asp:Label>
                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
