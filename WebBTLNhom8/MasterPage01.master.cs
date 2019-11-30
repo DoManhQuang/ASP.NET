@@ -74,7 +74,11 @@ public partial class MasterPage01 : System.Web.UI.MasterPage
 
     protected void lnkbtnTaikhoan_Click(object sender, EventArgs e)
     {
-
+        if (Session["users"] != null)
+        {
+            Quang_Khachhang khachhang = (Quang_Khachhang)Session["users"];
+            Response.Redirect("Suathongtintaikhoan.aspx?MaTK=" + khachhang.getMaKH());
+        }
     }
 
     protected void lnkbtnDangnhap_Click(object sender, EventArgs e)

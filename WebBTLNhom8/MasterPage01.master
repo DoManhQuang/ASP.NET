@@ -75,7 +75,7 @@
                                         <li class=""><a href="#" title="Khuyến mại">Khuyến mại</a></li>
                                         <li class=""><a href="#" title="Tư vấn thực đơn">Tư vấn thực đơn</a></li-->
                                         <li class=""><a href="#" title="Liên hệ">Liên hệ</a></li>
-                                        <li><a><asp:LinkButton ID="lnkbtnTaikhoan" runat="server" PostBackUrl="~/Suathongtintaikhoan.aspx" OnClick="lnkbtnTaikhoan_Click">Name</asp:LinkButton>
+                                        <li><a><asp:LinkButton ID="lnkbtnTaikhoan" runat="server" OnClick="lnkbtnTaikhoan_Click">Name</asp:LinkButton>
                                             </a></li>
                                         <li class="last ">
                                             <asp:LinkButton ID="lnkbtnDonhang" runat="server" OnClick="lnkbtnDonhang_Click" Visible="False">Đơn hàng</asp:LinkButton>

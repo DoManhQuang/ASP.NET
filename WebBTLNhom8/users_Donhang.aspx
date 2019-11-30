@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h3>Trang thông tin đơn hàng</h3>
     <p>&nbsp;</p>
-    <p style="text-align: center">
+    <p style="text-align: left">
         <asp:GridView ID="gvThontindonhang" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MaDH" DataSourceID="SqlDonhang" Width="100%" Font-Size="14px" PageSize="3">
             <Columns>
                 <asp:TemplateField HeaderText="Mã đơn hàng" InsertVisible="False" SortExpression="MaDH">

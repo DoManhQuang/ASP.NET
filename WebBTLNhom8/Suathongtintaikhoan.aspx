@@ -258,7 +258,7 @@
             </fieldset></div>
                 <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:BTLCSDLWEBConnectionString %>" 
-                    SelectCommand="SELECT [MaTK], [Hoten], [Ngaysinh], [Diachi], [Sodienthoai], [email], [Matkhau] FROM [tblTaikhoan] WHERE (([email] = @email) AND ([Matkhau] = @Matkhau))" 
+                    SelectCommand="SELECT [MaTK], [Hoten], [Ngaysinh], [Diachi], [Sodienthoai], [email], [Matkhau] FROM [tblTaikhoan] WHERE [MaTK] = @MaTK" 
                     DeleteCommand="DELETE FROM [tblTaikhoan] WHERE [MaTK] = @MaTK" 
                     InsertCommand="INSERT INTO [tblTaikhoan] ([Hoten], [Ngaysinh], [Diachi], [Sodienthoai], [email], [Matkhau]) VALUES (@Hoten, @Ngaysinh, @Diachi, @Sodienthoai, @email, @Matkhau)" 
                     
@@ -276,8 +276,7 @@
                         <asp:Parameter Name="Matkhau" Type="String" />
                     </InsertParameters>
                     <SelectParameters>
-                        <asp:SessionParameter Name="email" SessionField="userName" Type="String" />
-                        <asp:SessionParameter Name="Matkhau" SessionField="userPass" Type="String" />
+                        <asp:QueryStringParameter Name="MaTK" QueryStringField="MaTK" Type="Int32" />
                     </SelectParameters>
                     <UpdateParameters>
                         <asp:Parameter Name="Hoten" Type="String" />
