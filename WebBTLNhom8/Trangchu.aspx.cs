@@ -16,7 +16,7 @@ public partial class Trangchu : System.Web.UI.Page
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BTLCSDLWEBConnectionString2"].ToString());
             connection.Open();
-            string sql = "select*from tblThucpham";
+            string sql = "SELECT * FROM tblThucpham ORDER BY NEWID()";
             SqlDataAdapter sqldata = new SqlDataAdapter(sql, connection);
             DataTable tbble = new DataTable();
             sqldata.Fill(tbble);

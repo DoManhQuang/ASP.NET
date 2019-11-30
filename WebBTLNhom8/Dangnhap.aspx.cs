@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-
+using System.Configuration;
 
 public partial class Dangnhap : System.Web.UI.Page
 {
     
     public string fullname;
-    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DI6CE7U\SQLEXPRESS;Initial Catalog=BTLCSDLWEB;Integrated Security=True");
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["BTLCSDLWEBConnectionString2"].ToString());
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["users"] != null)

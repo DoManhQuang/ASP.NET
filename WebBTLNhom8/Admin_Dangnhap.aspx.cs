@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -9,7 +10,7 @@ using System.Web.UI.WebControls;
 public partial class Admin_Dangnhap : System.Web.UI.Page
 {
     public string fullname;
-    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DI6CE7U\SQLEXPRESS;Initial Catalog=BTLCSDLWEB;Integrated Security=True");
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["BTLCSDLWEBConnectionString2"].ToString());
 
     protected void Page_Load(object sender, EventArgs e)
     { 

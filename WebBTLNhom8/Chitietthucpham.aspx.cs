@@ -35,6 +35,10 @@ public partial class Chitietthucpham : System.Web.UI.Page
             //   StringSplitOptions.RemoveEmptyEntries);
 
             //giatien = strlist[0] + strlist[1];
+            if(txtSoluongmua.Text.Trim() == "")
+            {
+                txtSoluongmua.Text = "0";
+            }
             int Soluongmua = int.Parse(txtSoluongmua.Text.Trim());
 
             // lấy dữ liệu Hàng
@@ -78,6 +82,7 @@ public partial class Chitietthucpham : System.Web.UI.Page
             else
             {
                 lblSoluongmua.Visible = true;
+                txtSoluongmua.Text = "0";
             }
         }
     }

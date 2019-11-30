@@ -198,7 +198,7 @@
                 <tr>
                     <td style="width: 165px">Số lượng mua</td>
                     <td>
-                        <asp:TextBox ID="txtSoluongmua" runat="server" Width="177px">1</asp:TextBox>
+                        <asp:TextBox ID="txtSoluongmua" runat="server" Width="36px">1</asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Label ID="lblSoluongmua" runat="server" EnableTheming="True" ForeColor="Red" Text="Bạn chưa chọn số lượng mua" Visible="False"></asp:Label>
                         <br />
