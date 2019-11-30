@@ -57,6 +57,7 @@ create table tblDonhang
 	Yeucaukhac nvarchar(100),
 	Tongtien varchar(20) not null,
 	Ngaymua datetime not null Default CURRENT_TIMESTAMP,
+	Tinhtrang nvarchar(255) DEFAULT 'NULL',
 	constraint FK_tblDH foreign key(MaTK) references tblTaikhoan(MaTK)
 	on update cascade on delete cascade,
 )
@@ -112,7 +113,7 @@ Các nhà khoa học Mỹ đã tiến hành nghiên cứu và chứng minh rằn
 ('2', N'Cua', '10000', 30, N'Rau an toàn, không nhiễm kim loại nặng; các loại vi sinh vật gây bệnh; hàm lượng thuốc BVTV dưới ngưỡng quy định của', 'cua.jpg'),
 ('2', N'Cá chép', '42000', 40, N' Cá chép 1 con khoảng 500g, thông bạch 6 cái, bí xanh 500g, hành trắng, dầu ăn, gia vị vừa đủ. Cá chép bỏ ruột, không đánh vảy, rửa sạch, cho vào nồi cùng với bí xanh,... ', 'cachep.jpg'),
 ('2', N'Cá quả miền Bắc', '45000', 50, N'Thành phần hoá học: Thịt cá có 18,2% protid, 2,7% lipid, Ca 90mg%, P 240mg%, Fe 2,2mg% và một số chất khác. Cứ 100g thịt cá cung cấp 100 calo..', 'caquab.jpg'),
-('2', N'Cá rô phi', '32000', 60, N'Các nhà dinh dưỡng học đã khuyên chúng ta nên ǎn nhiều cá, vì cá dễ tiêu, nhiều chất bổ dưỡng, nhất là đối với trẻ em, người cao tuổi, sản phụ, người bị bệnh tim mạch...,', 'carophi.jpg'),
+('2', N'Cá rô phi', '32000', 60, N'Các nhà dinh dưỡng học đã khuyên chúng ta nên ǎn nhiều cá, vì cá dễ tiêu, nhiều chất bổ dưỡng, nhất là đối với trẻ em, người cao tuổi, sản phụ, người bị bệnh tim mạch...,', 'caro.jpg'),
 ('2', N'Cá trôi loại to', '35000', 30, N' hân dẹp vừa, khá cao. Ngực và bụng tròn, đầu ngắn và rộng. Miệng dưới nằm ngang, hơi uốn cong. Có hai đôi râu 1 đôi râu mõm, 1 đôi râu hàm. .', 'catroi.jpg'),
 ('2', N'Cua gạch loại to', '20000', 40, N'Lượng protein cao nhưng lại rất dễ tiêu hóa, trung bình 100g thịt cua sẽ chứa khoảng: 12,3g protid, 3,3g lipid, 5.040g canxi, 430mg phốt pho, 4,7mg sắt.', 'cua.jpg'),
 ('2', N'Cá thu tươi cắt lát', '15000', 50, N'Cá thu là một trong các loại cá biển có thịt thơm ngon dễ ăn và có nguồn dinh dưỡng dồi dào như sắt, phốt pho,...', 'cathutuoi.jpg'),
@@ -150,12 +151,9 @@ Các nhà khoa học Mỹ đã tiến hành nghiên cứu và chứng minh rằn
 
 select * from tblThucpham
 
-go
-update tblThucpham set urlAnh = 'duachin.jpg' where MaTP = '76'
-
 insert into tblDonhang values
-('2', N'Đại Học Công Nghiệp Hà Nội', N'Giao hàng 2h', '10000', '2019-09-19'),
-('3', N'Đại Học Công Nghiệp Hà Nội', N'Giao hàng 3h', '22000', '2019-09-19')
+('2', N'Đại Học Công Nghiệp Hà Nội', N'Giao hàng 2h', '10000', '2019-09-19', 'Giao hàng thành công'),
+('3', N'Đại Học Công Nghiệp Hà Nội', N'Giao hàng 3h', '22000', '2019-09-19', 'Giao hàng thành công')
 
 select * from tblDonhang
 
@@ -179,16 +177,3 @@ from tblTaikhoan inner join tblDonhang on tblTaikhoan.MaTK = tblDonhang.MaTK
 				 inner join tblThucpham on tblChitietDH.MaTP = tblThucpham.MaTP
 where tblTaikhoan.MaTK = 6
 group by tblTaikhoan.Hoten, tblTaikhoan.Sodienthoai, tblDonhang.Diachinhanhang, tblDonhang.Yeucaukhac, tblDonhang.Ngaymua, tblDonhang.Tongtien
-
-/*
-	Các trạng thái đơn hàng :
-	- Chờ xác nhận đơn hàng
-	- Đang đi lấy hàng về kho
-	- Đang vận chuyển
-	- Đã vận chuyển đến kho
-	- Sẵn hàng giao hàng
-	- Giao hàng thành công
-*/
-ALTER TABLE tblDonhang
-ADD Tinhtrang nvarchar(255) DEFAULT 'NULL'
-select * from tblDonhang
